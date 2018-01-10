@@ -25,6 +25,11 @@ import java.util.List;
 
 import butterknife.BindView;
 
+/**
+ *
+ *
+ * shouye
+ */
 public class MainActivity extends BaseActivity implements OnTabSelectListener,ViewPager.OnPageChangeListener{
 
     @BindView(R.id.viewpager_main)
