@@ -72,30 +72,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        /*复用rootview,针对fragment多次调用onCreateView的问题*/
-        int testFlag = 0;
-        if (null != mRootView) {
-            ViewGroup parent = (ViewGroup) mRootView.getParent();
-            if (null != parent) {
-                parent.removeView(mRootView);
-                testFlag = 1;
-            }
-            unbinder = ButterKnife.bind(this, mRootView);
-        } else {
-            if (!isHadNormalTitleBar()) {
-                // Inflate the layout for this fragment
-                mRootView = (ViewGroup) inflater.inflate(getLayoutId(), container, false);
-            } else {
-                mInflater = getHoldingActivity().getLayoutInflater();
-                mRootView = (ViewGroup) mInflater.inflate(R.layout.fragment_base, null);
-                /*初始化用户定义的布局*/
-                mInflater.inflate(getLayoutId(), mRootView);
-            }
-            testFlag = 2;
-            unbinder = ButterKnife.bind(this, mRootView);
-            initViews(mRootView);
-        }
-
+        mRootView = (ViewGroup) inflater.inflate(getLayoutId(), container, false);
+        unbinder = ButterKnife.bind(this, mRootView);
+        initViews(mRootView);
         return mRootView;
     }
 
@@ -146,12 +125,6 @@ public abstract class BaseFragment extends Fragment {
             hasLoadedData = true;
             lazyLoadData();
         }
-    }
-    /**
-     * 自定义标题栏
-     */
-    public void onCreateCustomToolBar(Toolbar toolbar) {
-        toolbar.setContentInsetsRelative(0, 0);
     }
 
     //获取宿主Activity
