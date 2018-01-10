@@ -10,11 +10,6 @@ import android.view.ViewGroup;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HomeFragment extends BaseFragment {
 
     private static final String ARG_PARAM1 = "param1";
