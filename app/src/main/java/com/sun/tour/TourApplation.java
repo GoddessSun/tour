@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.sun.tour.utils.SharedPrefUtil;
 
 /**
  * Date: 2018/1/11
@@ -26,9 +27,11 @@ public class TourApplation extends Application {
     public void onCreate() {
         super.onCreate();
         mApplication = this;
+        SharedPrefUtil.init(mApplication);
         ARouter.openLog();     // 打印日志
         ARouter.openDebug();
         ARouter.init(mApplication); // 尽可能早，推荐在Application中初始化
+
     }
 
     public static Context getAppContext() {

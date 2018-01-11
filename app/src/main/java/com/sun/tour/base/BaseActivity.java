@@ -58,6 +58,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             LayoutInflater.from(this).inflate(layoutResID,mRootView);
             mTitleTextView = mRootView.findViewById(R.id.text_toolbar_title);
             mFrameLayoutLeft = mRootView.findViewById(R.id.framelayout_left_base);
+            mFrameLayoutLeft.setOnClickListener(this);
             mFrameLayoutRight = mRootView.findViewById(R.id.framelayout_right_base);
             super.setContentView(mRootView);
         }

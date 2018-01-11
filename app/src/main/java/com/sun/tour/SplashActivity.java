@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.sun.tour.utils.SharedPrefUtil;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionNo;
 import com.yanzhenjie.permission.PermissionYes;
@@ -32,13 +33,13 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-        if (!AndPermission.hasPermission(this,mPermissions)){
+        if (!AndPermission.hasPermission(this, mPermissions)) {
             AndPermission.with(this)
                     .requestCode(REQUEST_CODE)
                     .permission(mPermissions)
                     .callback(this)
                     .start();
-        }else {
+        } else {
             initSkip();
 
         }
@@ -48,20 +49,25 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                ARouter.getInstance().build("/tour/main/main_activity").navigation();
+                boolean isFirst = SharedPrefUtil.getBoolean(SharedPrefUtil.SP_IS_FIRST_LOGIN, true);
+                if (isFirst) {
+                    ARouter.getInstance().build("/tour/main/guide_activity").navigation();
+                } else {
+                    ARouter.getInstance().build("/tour/main/main_activity").navigation();
+                }
                 finish();
             }
-        },1000);
+        }, 1000);
     }
 
 
     @PermissionYes(REQUEST_CODE)
-    public void getPermissionYes(@NonNull List<String> deniedPermissions){
+    public void getPermissionYes(@NonNull List<String> deniedPermissions) {
         initSkip();
     }
 
     @PermissionNo(REQUEST_CODE)
-    public void getPermissionNo(@NonNull List<String> deniedPermissions){
+    public void getPermissionNo(@NonNull List<String> deniedPermissions) {
         finish();
     }
 

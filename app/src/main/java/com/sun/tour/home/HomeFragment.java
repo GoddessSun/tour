@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
+
+import butterknife.OnClick;
 
 public class HomeFragment extends BaseFragment {
 
@@ -56,6 +59,10 @@ public class HomeFragment extends BaseFragment {
 
     }
 
+    @OnClick(R.id.btn_login)
+    public void onLoginClick(){
+        ARouter.getInstance().build("/tour/login/login_activity").navigation();
+    }
 
 
 }
