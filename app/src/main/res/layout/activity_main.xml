@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@color/backgraound"
-        app:tl_textSelectColor="@color/colorPrimary"
+        app:tl_textSelectColor="@color/blue"
         app:tl_textsize="10sp"
         app:tl_textUnselectColor="@color/text_color666"
         />

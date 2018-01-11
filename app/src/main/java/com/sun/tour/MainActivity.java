@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.ViewParent;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -30,6 +31,7 @@ import butterknife.BindView;
  *
  * shouye
  */
+@Route(path = "/tour/main/main_activity")
 public class MainActivity extends BaseActivity implements OnTabSelectListener,ViewPager.OnPageChangeListener{
 
     @BindView(R.id.viewpager_main)
