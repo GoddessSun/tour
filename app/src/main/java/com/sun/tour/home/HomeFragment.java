@@ -2,18 +2,28 @@ package com.sun.tour.home;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.alibaba.android.arouter.launcher.ARouter;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
+import com.sun.tour.home.adapter.NearbyAdapter;
 
-import butterknife.OnClick;
+import butterknife.BindView;
 
 public class HomeFragment extends BaseFragment {
+
+    @BindView(R.id.refresh_layout_home)
+    SmartRefreshLayout mSmartRefreshLayout;
+    @BindView(R.id.scrollView_home)
+    NestedScrollView mNestedScrollView;
+    @BindView(R.id.recyclerview_nearby_home)
+    RecyclerView mNearbyRecyclerView;
+    @BindView(R.id.recyclerview_hot_home)
+    RecyclerView mHotRecyclerView;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -56,13 +66,22 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initViews(View rootView) {
+        mSmartRefreshLayout.setEnableLoadmore(false);
+        LinearLayoutManager mNearbyLinearLayoutManager = new LinearLayoutManager(getHoldingActivity());
+        mNearbyLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mNearbyRecyclerView.setLayoutManager(mNearbyLinearLayoutManager);
 
+        LinearLayoutManager mHotLinearLayoutManager = new LinearLayoutManager(getHoldingActivity());
+        mHotLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mHotRecyclerView.setLayoutManager(mHotLinearLayoutManager);
+
+        NearbyAdapter nearbyAdapter = new NearbyAdapter();
+        mNearbyRecyclerView.setAdapter(nearbyAdapter);
+
+        mHotRecyclerView.setAdapter(nearbyAdapter);
     }
 
-    @OnClick(R.id.btn_login)
-    public void onLoginClick(){
-        ARouter.getInstance().build("/tour/login/login_activity").navigation();
-    }
+
 
 
 }

@@ -19,14 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".base.BaseActivity" />
         <activity
             android:name=".GuideActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
