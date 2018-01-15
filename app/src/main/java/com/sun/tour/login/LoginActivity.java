@@ -66,7 +66,7 @@ public class LoginActivity extends BaseActivity {
             RxToast.info(this,"请输入密码").show();
             return;
         }
-        
+
     }
 
     @OnClick(R.id.text_register)//注册
