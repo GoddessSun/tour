@@ -1,2 +1,12 @@
 1.SmartRefreshLayout
     https://github.com/scwang90/SmartRefreshLayout
+2.CircleImageView
+    https://github.com/hdodenhof/CircleImageView
+3.RxTools
+    https://github.com/vondear/RxTools
+4.MVVM
+    https://juejin.im/post/5a55ecb6f265da3e4d7298e9
+5.SeekBar
+    https://github.com/woxingxiao/BubbleSeekBar.git
+6.Android图片压缩工具
+    https://github.com/Curzibn/Luban.git
