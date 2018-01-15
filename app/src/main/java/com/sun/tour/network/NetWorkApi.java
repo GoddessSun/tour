@@ -16,7 +16,16 @@ import rx.Observable;
 
 public interface NetWorkApi {
 
+    //发送验证码
     @FormUrlEncoded
     @POST("common/send-code")
     Observable<Result> sendCodeApi(@Field("phone") String phone);
+
+    //注册
+    @FormUrlEncoded
+    @POST("/user/register")
+    Observable<Result> registUser(@Field("mobile") String mobile,
+                                  @Field("password") String password,
+                                  @Field("type") String type,
+                                  @Field("code") String code);
 }

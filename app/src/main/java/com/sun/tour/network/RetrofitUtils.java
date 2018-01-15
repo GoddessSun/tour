@@ -62,4 +62,19 @@ public class RetrofitUtils {
 
         return getNetWorkApi().sendCodeApi(mobile);
     }
+
+    /**
+     *
+     * 注册
+     *
+     * @param mobile
+     * @param password
+     * @param type
+     * @param code
+     * @return
+     */
+    public Observable<Result> registUser(String mobile, String password, String type, String code){
+
+        return getNetWorkApi().registUser(mobile,password,type,code);
+    }
 }

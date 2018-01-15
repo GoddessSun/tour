@@ -7,4 +7,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="test">RecyClerView 的适配器 和 ListView 的适配器还是很相识的,但是和ListView的适配器简洁了许多。由于RecyclerView 的适配器继承与 RecyclerView.Adapter 方法 所以我们必须重写 3个方法,并且需要指定泛型为  orAdapter.ViewHolder (orAdapter为自己的类名)。其中ViewHodler是我们在orAdapter 定义的一个内部类。(个人感觉很像把BaseAdatper的getView分成了2个部分)。作者：Mircale1链接：https://www.jianshu.com/p/b82c407c9056來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。(2.1.1)如果你想实现 RecyClerView 横向滑动功能只需要,使用 RecyClerView 的线性布局管理器 LinearLayoutManager ,方法调用 setOrientation() , 来控制使用什么样的布局样式,如果你想实现横向滑动的话就使用 setOrientation(LinearLayoutManager.HORIZONTAL);。</string>
+    <string name="regist">注册</string>
+    <string name="get_code">获取验证码</string>
+    <string name="mobile_hint">请输入手机号</string>
+    <string name="code_hint">请输入验证码</string>
+    <string name="nickname_hint">请输入昵称</string>
+    <string name="regist_password_hint">请设置登录密码</string>
+    <string name="regist_password_again_hint">请再次输入登录密码</string>
+    <string name="regist_set_password_title">设置密码</string>
+    <string name="agreenment">请勾选用户协议</string>
 </resources>

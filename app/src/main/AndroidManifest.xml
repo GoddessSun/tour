@@ -15,11 +15,13 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppSplash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         <activity
             android:name=".GuideActivity"
@@ -30,7 +32,11 @@
         <activity
             android:name=".login.LoginActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".regist.RegistActivity"></activity>
+        <activity
+            android:name=".regist.RegistActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".regist.password.RegistPasswordActivity"></activity>
     </application>
 
 </manifest>

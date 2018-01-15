@@ -33,14 +33,14 @@ public abstract class NetWorkCallBack<T> implements Observer<T> {
             onFailed("返回为空");
             return;
         }
-        if (!(t instanceof Result)) {
-            onFailed("数据结构变化");
-            return;
+
+        if (t instanceof Result){
+            if (!((Result)t).isStatus()) {
+                onFailed(((Result)t).getMsg());
+                return;
+            }
         }
-        if (!((Result)t).isStatus()) {
-            onFailed("请求失败");
-            return;
-        }
+
         onSuccess(t);
     }
 
