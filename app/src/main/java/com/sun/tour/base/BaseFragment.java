@@ -9,13 +9,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.sun.tour.R;
-import com.sun.tour.utils.ToastUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -137,30 +133,5 @@ public abstract class BaseFragment extends Fragment {
     }
 
 
-    /**
-     * 弹系统消息
-     *
-     * @param id 资源id in strings.xml
-     */
-    public void showToast(@StringRes int id) {
-        ToastUtil.showToast(getHoldingActivity(), id);
-    }
-
-
-    /**
-     * 弹系统消息
-     *
-     * @param text 需要显示的文本
-     */
-    public void showToast(@NonNull String text) {
-        ToastUtil.showToast(getHoldingActivity(), text);
-    }
-
-    /**
-     * 关闭统消息
-     */
-    public void closeToast() {
-        ToastUtil.dismissToast();
-    }
 
 }

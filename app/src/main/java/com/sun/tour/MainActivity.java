@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
-import android.view.ViewParent;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.flyco.tablayout.CommonTabLayout;

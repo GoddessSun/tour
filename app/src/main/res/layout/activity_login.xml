@@ -25,12 +25,14 @@
             android:textSize="@dimen/title_txt_size" />
 
         <EditText
+            android:id="@+id/edit_phone"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/white"
             android:hint="请输入手机号"
             android:inputType="phone"
+            android:maxLength="11"
             android:paddingLeft="16dp"
             android:textColor="@color/text_color333"
             android:textColorHint="@color/text_color666"
@@ -58,17 +60,27 @@
             android:textSize="@dimen/title_txt_size" />
 
         <EditText
+            android:id="@+id/edit_password"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/white"
             android:hint="请输入密码"
             android:inputType="textPassword"
+            android:maxLength="19"
             android:paddingLeft="16dp"
             android:textColor="@color/text_color333"
             android:textColorHint="@color/text_color666"
             android:textCursorDrawable="@null"
             android:textSize="@dimen/title_small_txt_size" />
+
+        <ImageView
+            android:id="@+id/image_is_can_see"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_no_visiable_password" />
     </LinearLayout>
 
     <View
@@ -77,25 +89,38 @@
         android:background="@color/color_base_line" />
 
     <CheckBox
+        android:id="@+id/checkbox_remember_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:text="记住密码"
         android:textColor="@color/text_color666"
         android:textSize="12sp" />
 
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/water_ripple"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingLeft="50dp"
         android:paddingRight="50dp">
 
         <TextView
+            android:id="@+id/text_register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -110,6 +135,7 @@
             android:background="@color/text_color999" />
 
         <TextView
+            android:id="@+id/text_forget_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

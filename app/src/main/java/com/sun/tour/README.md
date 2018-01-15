@@ -10,3 +10,5 @@
     https://github.com/woxingxiao/BubbleSeekBar.git
 6.Android图片压缩工具
     https://github.com/Curzibn/Luban.git
+7.轮播控件
+    https://github.com/bingoogolapple/BGABanner-Android
