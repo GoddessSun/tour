@@ -30,8 +30,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true;
+    }
 }
 
+greendao {
+    schemaVersion 1
+    daoPackage "com.sun.tour.db.gen"
+    targetGenDir "src/main/java"
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
