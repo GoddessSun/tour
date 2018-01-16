@@ -10,28 +10,31 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:contentInsetStart="0dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
-        <de.hdodenhof.circleimageview.CircleImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circle_image_view_persion"
                 android:layout_width="30dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_default_user_icon"/>
+                android:src="@drawable/ic_default_user_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="位置"/>
+                android:text="位置" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -58,6 +61,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <cn.bingoogolapple.bgabanner.BGABanner
+                    android:id="@+id/banner_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:banner_pointAutoPlayAble="true"
+                    app:banner_pageChangeDuration="1000"
+                    app:banner_transitionEffect="alpha"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview_nearby_home"
