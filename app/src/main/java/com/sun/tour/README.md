@@ -12,3 +12,5 @@
     https://github.com/Curzibn/Luban.git
 7.轮播控件
     https://github.com/bingoogolapple/BGABanner-Android
+8.Glide
+    https://github.com/bumptech/glide

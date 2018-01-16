@@ -16,4 +16,7 @@
     <string name="regist_password_again_hint">请再次输入登录密码</string>
     <string name="regist_set_password_title">设置密码</string>
     <string name="agreenment">请勾选用户协议</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

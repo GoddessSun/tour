@@ -1,38 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="192dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
 
-    <ImageView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/nav_header_bg"
-        android:scaleType="centerCrop"/>
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="56dp"
-        android:padding="8dp"
-        android:src="@drawable/ic_default_user_icon"/>
+        <LinearLayout
+            android:id="@+id/linear_no_login"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:background="@drawable/nav_header_bg"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/text_login_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_white_stroke"
+                android:paddingBottom="8dp"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:paddingTop="8dp"
+                android:text="登录/注册"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="登录后可享受更多服务与优惠哦"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_logined"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:background="@drawable/nav_header_bg"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_image_user_icon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_user_icon"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/text_main_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/circle_image_user_icon"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/circle_image_user_icon"
+                android:lineSpacingExtra="2dp"
+                android:text="孙喵猫"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_main_user_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_main_user_name"
+                android:layout_toRightOf="@id/circle_image_user_icon"
+                android:lineSpacingExtra="2dp"
+                android:text="我是最萌最可爱的孙喵猫"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_persion_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="个人信息"
+        android:textSize="@dimen/title_small_txt_size"
+        android:textColor="@color/text_color333"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/selector_drawerlayout"/>
+    <TextView
+        android:id="@+id/text_authy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="认证"
+        android:textSize="@dimen/title_small_txt_size"
+        android:textColor="@color/text_color333"
+        android:padding="16dp"
+        android:background="@drawable/selector_drawerlayout"/>
+    <TextView
+        android:id="@+id/text_notiycation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="系统通知"
+        android:textSize="@dimen/title_small_txt_size"
+        android:textColor="@color/text_color333"
+        android:padding="16dp"
+        android:background="@drawable/selector_drawerlayout"/>
+    <TextView
+        android:id="@+id/text_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帮助中心"
+        android:textSize="@dimen/title_small_txt_size"
+        android:textColor="@color/text_color333"
+        android:padding="16dp"
+        android:background="@drawable/selector_drawerlayout"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="24dp"
-        android:padding="16dp"
-        android:text="Jaeger"
-        android:textColor="@android:color/white"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"/>
     <TextView
+        android:id="@+id/text_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:text="设置"
+        android:textSize="@dimen/title_small_txt_size"
+        android:textColor="@color/text_color333"
         android:padding="16dp"
-        android:text="写代码的猴子"
-        android:textColor="@android:color/white"
-        android:textSize="12sp"/>
-
-</FrameLayout>
+        android:background="@drawable/selector_drawerlayout"/>
+</LinearLayout>

@@ -10,29 +10,52 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:contentInsetStart="0dp">
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-        <de.hdodenhof.circleimageview.CircleImageView
+            android:paddingRight="16dp"
+            android:background="@color/white">
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circle_image_view_persion"
-                android:layout_width="30dp"
-                android:layout_height="36dp"
-                android:src="@drawable/ic_default_user_icon"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"/>
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:paddingRight="2dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_default_user_icon" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/text_search"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_home_search"
+                android:text="目的地 / 酒店 / 关键词"
+                android:textColor="@color/text_color666"
+                android:textSize="14sp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_alignParentRight="true"
-                android:text="位置"/>
-        </RelativeLayout>
+                android:text="位置"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
@@ -49,6 +72,7 @@
             android:id="@+id/scrollView_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/backgraound"
             android:fillViewport="true"
             android:scrollbars="none"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -59,28 +83,119 @@
                 android:orientation="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+                <cn.bingoogolapple.bgabanner.BGABanner
+                    android:id="@+id/banner_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:banner_pageChangeDuration="1000"
+                    app:banner_pointAutoPlayAble="true"
+                    app:banner_pointContainerBackground="@android:color/transparent"
+                    app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+                    app:banner_transitionEffect="fade"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="附近推荐"
+                        android:textColor="@color/text_color333"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看更多"
+                        android:textColor="@color/text_color666"
+                        android:textSize="12sp" />、
+                </LinearLayout>
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview_nearby_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="8dp"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test" />
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="热门推荐"
+                        android:textColor="@color/text_color333"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看更多"
+                        android:textColor="@color/text_color666"
+                        android:textSize="12sp" />、
+                </LinearLayout>
+
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview_hot_home"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="8dp"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test" />
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:text="登录指导"
+                    android:gravity="center"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:text="使用指导"
+                    android:gravity="center"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:text="意见反馈"
+                    android:gravity="center"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp" />
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>

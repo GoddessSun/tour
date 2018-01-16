@@ -2,17 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:title="Import"/>
+            android:id="@+id/nav_persion_center"
+            android:title="个人信息"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:title="Gallery"/>
+            android:id="@+id/nav_authy"
+            android:title="认证"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:title="Slideshow"/>
+            android:id="@+id/nav_notifycation"
+            android:title="系统通知"/>
         <item
-            android:id="@+id/nav_manage"
-            android:title="Tools"/>
+            android:id="@+id/nav_help"
+            android:title="帮助"/>
+        <item
+            android:id="@+id/nav_service"
+            android:title="服务条款"/>
     </group>
 
     <item android:title="Communicate">
