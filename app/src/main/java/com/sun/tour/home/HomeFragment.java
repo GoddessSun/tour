@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.MainActivity;
 import com.sun.tour.R;
@@ -109,6 +110,7 @@ public class HomeFragment extends BaseFragment {
             public void fillBannerItem(BGABanner banner, ImageView itemView, String model, int position) {
                 Glide.with(getHoldingActivity())
                         .load(model)
+                        .apply(new RequestOptions().placeholder(R.drawable.shape_imge_placeholder).error(R.drawable.shape_imge_placeholder).dontAnimate().centerCrop())
                         .into(itemView);
             }
         });

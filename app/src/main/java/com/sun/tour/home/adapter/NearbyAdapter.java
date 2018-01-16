@@ -20,7 +20,7 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.NearbyView
 
     @Override
     public NearbyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View mItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_nearby, null);
+        View mItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout_nearby, null);
         NearbyViewHolder nearbyViewHolder = new NearbyViewHolder(mItemView);
         return nearbyViewHolder;
     }
