@@ -10,6 +10,7 @@ import com.sun.tour.base.BaseView;
 public class LoginContract {
     public interface View extends BaseView<Presenter> {
         void onLoginSuccess();
+        void onLoginError();
     }
 
     public interface Presenter extends BasePresenter<View> {

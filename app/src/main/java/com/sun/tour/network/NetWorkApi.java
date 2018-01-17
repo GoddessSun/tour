@@ -23,9 +23,15 @@ public interface NetWorkApi {
 
     //注册
     @FormUrlEncoded
-    @POST("/user/register")
+    @POST("user/register")
     Observable<Result> registUser(@Field("mobile") String mobile,
                                   @Field("password") String password,
                                   @Field("type") String type,
                                   @Field("code") String code);
+
+    //登录
+    @FormUrlEncoded
+    @POST("user/login")
+    Observable<Result> loginApi(@Field("mobile")String mobile,
+                                @Field("password") String password);
 }

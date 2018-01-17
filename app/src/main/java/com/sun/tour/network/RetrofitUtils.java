@@ -77,4 +77,14 @@ public class RetrofitUtils {
 
         return getNetWorkApi().registUser(mobile,password,type,code);
     }
+
+    /**
+     * 登录
+     * @param mobile
+     * @param password
+     * @return
+     */
+    public Observable<Result> login(String mobile, String password){
+        return getNetWorkApi().loginApi(mobile,password);
+    }
 }
