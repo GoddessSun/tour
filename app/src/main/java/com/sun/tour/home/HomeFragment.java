@@ -2,7 +2,6 @@ package com.sun.tour.home;
 
 
 import android.os.Bundle;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -17,6 +17,7 @@ import com.sun.tour.MainActivity;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 import com.sun.tour.home.adapter.NearbyAdapter;
+import com.sun.tour.utils.Constant;
 
 import java.util.Arrays;
 
@@ -121,9 +122,11 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.circle_image_view_persion)
     public void onPersionClick(){
-        if (mDrawerLayout!=null){
-            mDrawerLayout.openDrawer(GravityCompat.START);
-        }
+//        if (mDrawerLayout!=null){
+//            mDrawerLayout.openDrawer(GravityCompat.START);
+//        }
+        ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/search/search_activity")
+                .navigation();
     }
 
 
