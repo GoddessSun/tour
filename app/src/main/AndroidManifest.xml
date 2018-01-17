@@ -56,8 +56,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".regist.RegistActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".regist.password.RegistPasswordActivity" />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".regist.password.RegistPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".search.SearchActivity"></activity>
     </application>
 
 </manifest>

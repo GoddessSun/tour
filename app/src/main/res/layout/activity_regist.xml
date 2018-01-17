@@ -139,7 +139,7 @@
         android:textSize="@dimen/title_txt_size"
         android:textColor="@color/white"
         android:text="下一步"
-        android:background="@drawable/selector_regist_btn"
+        android:background="@drawable/water_ripple"
         android:layout_marginTop="@dimen/dimen20"
         android:layout_marginLeft="@dimen/dimen5"
         android:layout_marginRight="@dimen/dimen5"/>

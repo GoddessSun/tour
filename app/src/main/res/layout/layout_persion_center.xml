@@ -87,7 +87,6 @@
                 android:textSize="12sp" />
         </RelativeLayout>
     </FrameLayout>
-
     <TextView
         android:id="@+id/text_persion_info"
         android:layout_width="match_parent"
@@ -140,4 +139,5 @@
         android:textColor="@color/text_color333"
         android:padding="16dp"
         android:background="@drawable/selector_drawerlayout"/>
+
 </LinearLayout>

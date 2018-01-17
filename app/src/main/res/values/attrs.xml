@@ -9,4 +9,13 @@
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="SideBarView">
+        <attr name="sidebarTextColor" format="color"/>
+        <attr name="sidebarChooseTextColor" format="color"/>
+        <attr name="sidebarTextSize" format="dimension"/>
+        <attr name="sidebarLargeTextSize" format="dimension"/>
+        <attr name="sidebarBackgroundColor" format="color"/>
+        <attr name="sidebarRadius" format="integer"/>
+        <attr name="sidebarBallRadius" format="integer"/>
+    </declare-styleable>
 </resources>

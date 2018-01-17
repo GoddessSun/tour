@@ -1,8 +1,6 @@
 package com.sun.tour;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,26 +10,21 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.bumptech.glide.Glide;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.sun.tour.appointment.AppointmentFragment;
 import com.sun.tour.base.BaseActivity;
-import com.sun.tour.config.UserConfig;
 import com.sun.tour.focus.FocusFragment;
 import com.sun.tour.home.HomeFragment;
 import com.sun.tour.message.MessageFragment;
 import com.sun.tour.store.StoreFragment;
-import com.sun.tour.utils.SystemStatueBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;

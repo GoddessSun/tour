@@ -11,7 +11,6 @@ import com.sun.tour.base.BaseActivity;
 import com.sun.tour.utils.Constant;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 @Route(path = Constant.ACTVIITY_ROUTE + "/regist/password/registpassword_activitry")
@@ -34,7 +33,6 @@ public class RegistPasswordActivity extends BaseActivity implements RegistPasswo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist_password);
-        ButterKnife.bind(this);
         init();
     }
 

@@ -14,7 +14,6 @@ import com.sun.tour.base.BaseActivity;
 import com.sun.tour.utils.Constant;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 @Route(path = Constant.ACTVIITY_ROUTE + "/regist/regist_activity")
@@ -36,7 +35,6 @@ public class RegistActivity extends BaseActivity implements RegistContract.View 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regist);
-        ButterKnife.bind(this);
         init();
     }
 
