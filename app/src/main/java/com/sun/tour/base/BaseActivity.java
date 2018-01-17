@@ -1,5 +1,6 @@
 package com.sun.tour.base;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.sun.tour.R;
 import com.sun.tour.utils.SystemStatueBarUtil;
+import com.sun.tour.view.MyProgressDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +28,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     FrameLayout mFrameLayoutRight;//右侧小标题按钮，默认状态不显示
     private Unbinder mUnbinder;
     private long exitTime = 0;
+    private MyProgressDialog myProgressDialog;
     /**
      * 是否使用自己的布局，即不适用默认的toolbar以及默认的toolbar+content布局
      *
@@ -90,6 +93,66 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    /**
+     * 更新loading信息
+     * @param message
+     */
+    public void updateLoading(String message) {
+        if (myProgressDialog != null && myProgressDialog.isShowing()) {
+            myProgressDialog.setContent(message);
+        }
+    }
+
+    /**
+     * 默认显示 正在加载...
+     */
+    public void showLoading() {
+        showLoading("", false, null);
+    }
+
+    /**
+     *
+     * @param message loading显示内容
+     */
+    public void showLoading(String message) {
+        showLoading(message, false, null);
+    }
+
+    /**
+     *
+     * @param content loading显示内容
+     * @param cancelable 是否允许点击外部删除
+     */
+    public void showLoading(String content, boolean cancelable) {
+        showLoading(content, cancelable, null);
+    }
+
+    /**
+     *
+     * @param content loading显示内容
+     * @param cancelable 是否允许点击外部删除
+     * @param onCancelListener  删除监听
+     */
+    public void showLoading(String content, boolean cancelable, DialogInterface.OnCancelListener onCancelListener) {
+        if (myProgressDialog != null) {
+            myProgressDialog.cancel();
+            myProgressDialog = null;
+        }
+        myProgressDialog = new MyProgressDialog(this, content, cancelable, onCancelListener);
+        myProgressDialog.show();
+    }
+
+    /**
+     * 删除loading
+     */
+    public void dismissLoading() {
+        if (myProgressDialog != null) {
+            //调用此函数的一般都是正常结束的并非返回引起，所以，设置监听为空
+            myProgressDialog.setOnCancelListener(null);
+            myProgressDialog.cancel();
+            myProgressDialog = null;
+        }
+    }
     public void exit() {
         if ((System.currentTimeMillis() - exitTime) > 2000) {
             Toast.makeText(getApplicationContext(), R.string.main_backpress_exit,
