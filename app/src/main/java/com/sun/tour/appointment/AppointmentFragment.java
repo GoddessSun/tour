@@ -33,8 +33,8 @@ public class AppointmentFragment extends BaseFragment implements OnTabSelectList
     private String mParam1;
     private String mParam2;
     private String[] mTitles = {"我的预约", "预约我的"};
-    private List<Fragment> mFragments = new ArrayList<>();
-    private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+    private List<Fragment> mFragments;
+    private ArrayList<CustomTabEntity> mTabEntities;
 
     public AppointmentFragment() {
         // Required empty public constructor
@@ -56,6 +56,7 @@ public class AppointmentFragment extends BaseFragment implements OnTabSelectList
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -70,6 +71,8 @@ public class AppointmentFragment extends BaseFragment implements OnTabSelectList
 
     @Override
     public void initViews(View rootView) {
+        mTabEntities = new ArrayList<>();
+        mFragments = new ArrayList<>();
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new AppiontmentTabEntry(mTitles[i]));
         }
