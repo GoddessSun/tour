@@ -1,6 +1,7 @@
 package com.sun.tour.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,7 +9,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -41,31 +41,36 @@ public class PriceView extends View {
 
     private int numCount = 6;
     private String[] price;
+    private float textSize;
+    private int textColor;
+    private float textMagin;
 
     public PriceView(Context context) {
         super(context);
-        init(context);
     }
 
     public PriceView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        init(context,attrs);
     }
 
     public PriceView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
     }
 
-    private void init(Context context) {
+    private void init(Context context,AttributeSet attrs) {
         this.context = context;
-
+        Radius = DensityUtil.dp2px(15);
+        Magin = DensityUtil.dp2px(10);
+        TypedArray arr = context.obtainStyledAttributes(attrs,R.styleable.PriceView);
+        textSize = arr.getDimension(R.styleable.PriceView_textSize, 17);
+        textColor = arr.getColor(R.styleable.PriceView_textColor, Color.parseColor("#666666"));
+        textMagin = arr.getDimension(R.styleable.PriceView_textmagin, Magin * 3 / 2);
         price = context.getResources().getStringArray(R.array.Price);
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        Radius = DensityUtil.dp2px(15);
-        Magin = DensityUtil.dp2px(10);
+
 
     }
 
@@ -178,19 +183,19 @@ public class PriceView extends View {
             circleY2 = startHeight + Radius + Magin+Magin/2;
         }
 
-        Log.e("search","-------circleX1-----="+circleX1+"----circleY1----="+circleY1);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.parseColor("#f5f5f5"));
-
         //开始半圆
         RectF leftRectF = new RectF(startWidth + Radius+Magin,startHeight + Radius + Magin,
                 startWidth + Radius + Magin*2,startHeight + Radius+Magin*2);
         canvas.drawArc(leftRectF,90,180,true,paint);
 
+        //中间矩形
         RectF centerRectF = new RectF(startWidth + Radius+Magin+Magin/2,startHeight + Radius + Magin,
                 endWidth - Radius - Magin - Magin/2,startHeight +Radius+Magin*2);
         canvas.drawRect(centerRectF,paint);
 
+        //结束半圆
         RectF rightRectF = new RectF(endWidth - Radius - Magin - Magin,startHeight + Radius + Magin,
                 endWidth - Radius - Magin,startHeight + Radius+Magin*2);
         canvas.drawArc(rightRectF,-90,180,true,paint);
@@ -206,20 +211,24 @@ public class PriceView extends View {
         }
         canvas.drawRect(rectF,paint);
 
+        //处理底部文字和标点
         int start = startWidth + Magin + Radius;
         int height = startHeight + Radius*3 + Magin;
         int l = (endWidth - startWidth - Magin*2 - Radius*2)/(price.length - 1);
+        paint.setColor(textColor);
         for (int i = 0; i < price.length; i++) {
             paint.setStrokeWidth(7);
             canvas.drawPoint(start,height,paint);
             paint.setStrokeWidth(2);
-            paint.setTextSize(17);
+            paint.setTextSize(textSize);
             String s = price[i];
             Rect rect = new Rect();
             paint.getTextBounds(s,0,s.length(),rect);
-            canvas.drawText(s,start - rect.width()/2,height+Magin*3/2,paint);
+            canvas.drawText(s,start - rect.width()/2,height+textMagin,paint);
             start += l;
         }
+
+        //画第一个圆
         paint.setStrokeWidth(2);
         paint.setColor(Color.parseColor("#ffffff"));
         canvas.drawCircle(circleX1,circleY1,Radius,paint);
@@ -227,6 +236,7 @@ public class PriceView extends View {
         paint.setColor(Color.parseColor("#999999"));
         canvas.drawCircle(circleX1,circleY1,Radius,paint);
 
+        //画第二个圆
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.parseColor("#ffffff"));
         canvas.drawCircle(circleX2,circleY2,Radius,paint);
@@ -235,4 +245,5 @@ public class PriceView extends View {
         canvas.drawCircle(circleX2,circleY2,Radius,paint);
 
     }
+
 }
