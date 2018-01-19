@@ -60,8 +60,25 @@
         <activity
             android:name=".regist.password.RegistPasswordActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".search.SearchActivity" />
-        <activity android:name=".search.more.SearchMoreActivity"></activity>
+        <activity
+            android:name=".search.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".search.more.SearchMoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CaladerActivity"
+            android:screenOrientation="portrait">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".home.HotelDetailsActivity" />
+        <activity android:name=".appointment.AppointDetailsActivity"></activity>
     </application>
 
 </manifest>

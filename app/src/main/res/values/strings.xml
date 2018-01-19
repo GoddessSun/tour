@@ -6,7 +6,7 @@
     <string name="navigation_drawer_close">开启</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="test">RecyClerView 的适配器 和 ListView 的适配器还是很相识的,但是和ListView的适配器简洁了许多。由于RecyclerView 的适配器继承与 RecyclerView.Adapter 方法 所以我们必须重写 3个方法,并且需要指定泛型为  orAdapter.ViewHolder (orAdapter为自己的类名)。其中ViewHodler是我们在orAdapter 定义的一个内部类。(个人感觉很像把BaseAdatper的getView分成了2个部分)。作者：Mircale1链接：https://www.jianshu.com/p/b82c407c9056來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。(2.1.1)如果你想实现 RecyClerView 横向滑动功能只需要,使用 RecyClerView 的线性布局管理器 LinearLayoutManager ,方法调用 setOrientation() , 来控制使用什么样的布局样式,如果你想实现横向滑动的话就使用 setOrientation(LinearLayoutManager.HORIZONTAL);。</string>
+    <string name="test">这几个数据可谓相当亮眼。战略性新兴服务业，是指伴随着信息技术的发展和知识经济的出现以及社会分工的细化和消费结构的升级而新生的行业，包括计算机服务业、软件服务业、租赁业、商务服务业、科技交流业、推广服务业、居民服务业、社会福利业、仓储业等。而生产性服务业，就是为制造业提供配套服务的，通过生产性服务业加快发展，来带动制造业的发展。这两个领域的数据增长喜人，反映出国内生产消费在升级。这就不仅是经济的量的提升了，而是表明有了质的提升。</string>
     <string name="regist">注册</string>
     <string name="get_code">获取验证码</string>
     <string name="mobile_hint">请输入手机号</string>

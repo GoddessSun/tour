@@ -14,3 +14,5 @@
     https://github.com/bingoogolapple/BGABanner-Android
 8.Glide
     https://github.com/bumptech/glide
+9.RatingBar
+    https://github.com/DreaminginCodeZH/MaterialRatingBar

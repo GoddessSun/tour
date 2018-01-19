@@ -4,9 +4,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,6 +20,11 @@ import butterknife.ButterKnife;
 
 public class MyAppointmentAdapter extends RecyclerView.Adapter<MyAppointmentAdapter.MyAppointmentViewHolder>{
 
+    private OnRecyclerViewItemClick mOnRecyclerViewItemClick;
+
+    public void setmOnRecyclerViewItemClick(OnRecyclerViewItemClick onRecyclerViewItemClick){
+        this.mOnRecyclerViewItemClick = onRecyclerViewItemClick;
+    }
 
     @Override
     public MyAppointmentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -26,8 +34,15 @@ public class MyAppointmentAdapter extends RecyclerView.Adapter<MyAppointmentAdap
     }
 
     @Override
-    public void onBindViewHolder(MyAppointmentViewHolder holder, int position) {
-
+    public void onBindViewHolder(MyAppointmentViewHolder holder, final int position) {
+        holder.mRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mOnRecyclerViewItemClick!=null){
+                    mOnRecyclerViewItemClick.onItemRecyclerViewClick(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -36,6 +51,8 @@ public class MyAppointmentAdapter extends RecyclerView.Adapter<MyAppointmentAdap
     }
 
     public class MyAppointmentViewHolder extends RecyclerView.ViewHolder{
+        @BindView(R.id.relative_content_item_my_appointment)
+        RelativeLayout mRelativeLayout;
         public MyAppointmentViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);

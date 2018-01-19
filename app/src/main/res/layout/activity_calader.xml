@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.sun.tour.CaladerActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="当前日程情况"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新增日程"
+            android:textColor="#1c88da"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tl_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TableRow
+            android:background="@color/backgraound"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp">
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="日"
+                android:textColor="@color/text_color999"/>
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="一" />
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="二" />
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="三" />
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="四" />
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="五" />
+
+            <TextView
+                style="@style/dateStyle"
+                android:text="六"
+                android:textColor="@color/text_color999"/>
+        </TableRow>
+
+        <TableRow
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp">
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="日"
+                android:visibility="invisible"/>
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="一"
+                android:visibility="invisible"/>
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="8月" />
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="三"
+                android:visibility="invisible"/>
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="四"
+                android:visibility="invisible"/>
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="五"
+                android:visibility="invisible"/>
+
+            <TextView
+                style="@style/monthStyle"
+                android:text="六"
+                android:visibility="invisible"/>
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#d4d4d4"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -10,15 +10,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
 import com.sun.tour.appointment.adapter.MyAppointmentAdapter;
 import com.sun.tour.base.BaseFragment;
+import com.sun.tour.view.RxToast;
 
 import butterknife.BindView;
 
 
-public class MyAppointmentFragment extends BaseFragment {
+public class MyAppointmentFragment extends BaseFragment implements OnRecyclerViewItemClick{
 
     @BindView(R.id.refresh_layout_my_appointment)
     SmartRefreshLayout mSmartRefreshLayout;
@@ -28,6 +31,7 @@ public class MyAppointmentFragment extends BaseFragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
+    private MyAppointmentAdapter mMyAppointmentAdapter;
 
 
     public MyAppointmentFragment() {
@@ -65,9 +69,15 @@ public class MyAppointmentFragment extends BaseFragment {
     public void initViews(View rootView) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getHoldingActivity());
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        mRecyclerView.setAdapter(new MyAppointmentAdapter());
+        mMyAppointmentAdapter = new MyAppointmentAdapter();
+        mRecyclerView.setAdapter(mMyAppointmentAdapter);
+        mMyAppointmentAdapter.setmOnRecyclerViewItemClick(this);
 //        mRecyclerView.addItemDecoration(new DividerItemDecoration(getHoldingActivity(),LinearLayoutManager.VERTICAL));
     }
 
 
+    @Override
+    public void onItemRecyclerViewClick(int position) {
+        ARouter.getInstance().build("/tour/appoint/appoint_details_activity").navigation();
+    }
 }

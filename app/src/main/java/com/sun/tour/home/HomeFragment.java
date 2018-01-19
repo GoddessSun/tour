@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.MainActivity;
+import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 import com.sun.tour.home.adapter.NearbyAdapter;
@@ -96,11 +97,24 @@ public class HomeFragment extends BaseFragment {
         LinearLayoutManager mHotLinearLayoutManager = new LinearLayoutManager(getHoldingActivity());
         mHotLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mHotRecyclerView.setLayoutManager(mHotLinearLayoutManager);
-
+        //附近
         NearbyAdapter nearbyAdapter = new NearbyAdapter();
         mNearbyRecyclerView.setAdapter(nearbyAdapter);
-
-        mHotRecyclerView.setAdapter(nearbyAdapter);
+        nearbyAdapter.setmOnRecyclerViewItemClick(new OnRecyclerViewItemClick() {
+            @Override
+            public void onItemRecyclerViewClick(int position) {
+                ARouter.getInstance().build("/tour/home/hotel_details_activity").navigation();
+            }
+        });
+        //热门
+        NearbyAdapter mHotAdapter = new NearbyAdapter();
+        mHotRecyclerView.setAdapter(mHotAdapter);
+        mHotAdapter.setmOnRecyclerViewItemClick(new OnRecyclerViewItemClick() {
+            @Override
+            public void onItemRecyclerViewClick(int position) {
+                ARouter.getInstance().build("/tour/home/hotel_details_activity").navigation();
+            }
+        });
 
         initBanner();
     }
