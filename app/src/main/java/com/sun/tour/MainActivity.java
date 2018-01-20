@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -126,6 +127,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.text_persion_info://个人信息
+                ARouter.getInstance().build("/tour/persion/persion_center_activity").navigation();
                 break;
             case R.id.text_authy://认证
                 break;

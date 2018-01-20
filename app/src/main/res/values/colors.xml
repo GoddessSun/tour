@@ -11,6 +11,7 @@
     <color name="black_transparent">#79000000</color>
     <color name="blueDark">#0b3dc2</color>
     <color name="yellow">#f4bb60</color>
+    <color name="yellow_dark">#ed9506</color>
     <color name="yellow_light">#f5ac38</color>
     <color name="red">#c20603</color>
     <color name="red_light">#f52f2b</color>

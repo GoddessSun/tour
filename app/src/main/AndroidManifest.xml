@@ -78,7 +78,8 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".home.HotelDetailsActivity" />
-        <activity android:name=".appointment.AppointDetailsActivity"></activity>
+        <activity android:name=".appointment.AppointDetailsActivity" />
+        <activity android:name=".persion.PersionCenterActivity"></activity>
     </application>
 
 </manifest>
