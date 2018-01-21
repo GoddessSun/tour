@@ -145,6 +145,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="电话"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_persion_center_phone"
                     android:textColor="@color/text_color333"
                     android:textSize="14sp" />
 
@@ -154,6 +156,8 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="营业执照"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_persion_center_orig_card"
                     android:textColor="@color/text_color333"
                     android:textSize="14sp" />
 
@@ -164,10 +168,14 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="个人身份证"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_persion_center_id_card"
                     android:textColor="@color/text_color333"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_persion_center_other"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -183,7 +191,9 @@
                     android:gravity="center"
                     android:text="担保"
                     android:textColor="@color/text_color333"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:drawablePadding="8dp"
+                    android:drawableTop="@drawable/ic_persion_center_promiss"/>
 
             </LinearLayout>
 

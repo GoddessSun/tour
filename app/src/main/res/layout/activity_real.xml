@@ -22,7 +22,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_store_edit"
+            android:src="@drawable/ic_real_persional"
             android:layout_marginRight="10dp"/>
 
         <TextView
@@ -69,8 +69,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_store_edit"
-            android:layout_marginRight="10dp"/>
+            android:src="@drawable/ic_store_phone"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="2dp"/>
 
         <TextView
             android:layout_width="0dp"
@@ -116,8 +117,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_store_edit"
-            android:layout_marginRight="10dp"/>
+            android:src="@drawable/ic_store_other"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="2dp"/>
 
         <TextView
             android:layout_width="0dp"
@@ -163,7 +165,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_store_edit"
+            android:src="@drawable/ic_real_promiss"
             android:layout_marginRight="10dp"/>
 
         <TextView
@@ -210,8 +212,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_store_edit"
-            android:layout_marginRight="10dp"/>
+            android:src="@drawable/ic_real_promiss_real"
+            android:layout_marginRight="14dp"
+            android:layout_marginLeft="6dp"/>
 
         <TextView
             android:layout_width="0dp"
