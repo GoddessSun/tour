@@ -13,9 +13,550 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            ></RelativeLayout>
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen16">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_image_persion_center"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_icon"
+                app:civ_border_color="@color/text_color999"
+                app:civ_border_width="2dp" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/text_persion_center_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="我是最萌最可爱的喵毛"
+                    android:textColor="@color/text_color333"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_persion_center_name"
+                    android:layout_marginTop="6dp"
+                    android:text="ID : 200000"
+                    android:textColor="@color/text_color666"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen16" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/color_base_line"
+            android:paddingLeft="16dp"
+            android:paddingRight="@dimen/dimen16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen10"
+            android:paddingLeft="@dimen/dimen16"
+            android:paddingTop="@dimen/dimen10"
+            android:text="个人简介"
+            android:textColor="@color/text_color333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen10"
+            android:paddingLeft="@dimen/dimen16"
+            android:paddingRight="@dimen/dimen16"
+            android:text="沃美故我在沃美故我在沃美故我在沃美故我在沃美故我在沃美故我在沃美故我在沃美故我在"
+            android:textColor="@color/text_color666"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/backgraound" />
+
+        <LinearLayout
+            android:id="@+id/linear_real"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen16"
+                android:paddingRight="@dimen/dimen16"
+                android:paddingTop="@dimen/dimen10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="实名认证"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="去认证"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/color_base_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingTop="@dimen/dimen10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="电话"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="营业执照"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="个人身份证"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="相关证件"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="担保"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/backgraound" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen16"
+                android:paddingRight="@dimen/dimen16"
+                android:paddingTop="@dimen/dimen10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="作为使用者"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查看评论"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/color_base_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/dimen16"
+                android:paddingLeft="@dimen/dimen16"
+                android:paddingTop="@dimen/dimen10"
+                android:paddingBottom="@dimen/dimen10"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="成交率"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color666"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="98%"
+                        android:textColor="@color/text_color333"
+                        android:textSize="28sp"
+                        android:layout_marginTop="@dimen/dimen10"
+                        android:layout_marginBottom="@dimen/dimen10"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="97件 / 100件"
+                        android:textSize="@dimen/txt_size12"
+                        android:textColor="@color/text_color999"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.2dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="@dimen/dimen16"
+                    android:background="@color/color_base_line"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="对应态度"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color999"
+                            android:layout_marginRight="10dp"/>
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/RatingBarStyle"
+                            android:numStars="5"
+                            android:progress="3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_color999"
+                            android:textSize="@dimen/txt_size12"
+                            android:text="[98%]"
+                            android:layout_marginLeft="@dimen/dimen10"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dimen10"
+                        android:layout_marginBottom="@dimen/dimen10">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="处理时间"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color999"
+                            android:layout_marginRight="10dp"/>
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/RatingBarStyle"
+                            android:numStars="5"
+                            android:progress="3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_color999"
+                            android:textSize="@dimen/txt_size12"
+                            android:text="[98%]"
+                            android:layout_marginLeft="@dimen/dimen10"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="文明使用"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color999"
+                            android:layout_marginRight="10dp"/>
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/RatingBarStyle"
+                            android:numStars="5"
+                            android:progress="3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_color999"
+                            android:textSize="@dimen/txt_size12"
+                            android:text="[98%]"
+                            android:layout_marginLeft="@dimen/dimen10"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/backgraound"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen16"
+                android:paddingRight="@dimen/dimen16"
+                android:paddingTop="@dimen/dimen10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="作为管理者"
+                    android:textColor="@color/text_color333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查看评论"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/color_base_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/dimen16"
+                android:paddingLeft="@dimen/dimen16"
+                android:paddingTop="@dimen/dimen10"
+                android:paddingBottom="@dimen/dimen10"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="成交率"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color666"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="98%"
+                        android:textColor="@color/text_color333"
+                        android:textSize="28sp"
+                        android:layout_marginTop="@dimen/dimen10"
+                        android:layout_marginBottom="@dimen/dimen10"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="97件 / 100件"
+                        android:textColor="@color/text_color999"
+                        android:textSize="@dimen/txt_size12"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0.2dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="@dimen/dimen16"
+                    android:background="@color/color_base_line"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="对应态度"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color999"
+                            android:layout_marginRight="10dp"/>
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/RatingBarStyle"
+                            android:numStars="5"
+                            android:progress="3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_color999"
+                            android:textSize="@dimen/txt_size12"
+                            android:text="[98%]"
+                            android:layout_marginLeft="@dimen/dimen10"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dimen10"
+                        android:layout_marginBottom="@dimen/dimen10">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="处理时间"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color999"
+                            android:layout_marginRight="10dp"/>
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/RatingBarStyle"
+                            android:numStars="5"
+                            android:progress="3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_color999"
+                            android:textSize="@dimen/txt_size12"
+                            android:text="[98%]"
+                            android:layout_marginLeft="@dimen/dimen10"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="文明使用"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_color999"
+                            android:layout_marginRight="10dp"/>
+
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/RatingBarStyle"
+                            android:numStars="5"
+                            android:progress="3"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_color999"
+                            android:textSize="@dimen/txt_size12"
+                            android:text="[98%]"
+                            android:layout_marginLeft="@dimen/dimen10"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/backgraound"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_persion_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

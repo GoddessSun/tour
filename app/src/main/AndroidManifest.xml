@@ -79,7 +79,8 @@
         </activity>
         <activity android:name=".home.HotelDetailsActivity" />
         <activity android:name=".appointment.AppointDetailsActivity" />
-        <activity android:name=".persion.PersionCenterActivity"></activity>
+        <activity android:name=".persion.PersionCenterActivity" />
+        <activity android:name=".real.RealActivity"></activity>
     </application>
 
 </manifest>

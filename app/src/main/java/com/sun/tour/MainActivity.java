@@ -130,6 +130,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener
                 ARouter.getInstance().build("/tour/persion/persion_center_activity").navigation();
                 break;
             case R.id.text_authy://认证
+                ARouter.getInstance().build("/tour/real/real_activity").navigation();
                 break;
             case R.id.text_notiycation://系统通知
                 break;
