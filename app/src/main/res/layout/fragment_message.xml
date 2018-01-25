@@ -1,14 +1,54 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grayf2"
+    android:orientation="vertical"
     tools:context="com.sun.tour.message.MessageFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen48"
+        app:contentInsetStart="0dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/title_txt_size"
+            android:textColor="@color/text_color333"
+            android:text="消息"
+            android:gravity="center"/>
+    </android.support.v7.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_line_height"
+        android:background="@color/graycc"/>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/message_smart_srf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/message_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <LinearLayout
+        android:id="@+id/message_empty_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="消息"
-        android:gravity="center"/>
-
-</FrameLayout>
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_small_txt_size"
+            android:text="暂无消息"
+            android:textColor="@color/text_color666"/>
+    </LinearLayout>
+</LinearLayout>

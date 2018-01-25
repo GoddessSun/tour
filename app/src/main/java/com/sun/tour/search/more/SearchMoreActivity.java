@@ -50,7 +50,6 @@ public class SearchMoreActivity extends BaseActivity implements SearchMoreContra
         switch (v.getId()) {
             case R.id.search_more_choice_time_tv:
                 showDatePicker();
-
                 break;
         }
     }
@@ -61,7 +60,7 @@ public class SearchMoreActivity extends BaseActivity implements SearchMoreContra
         DatePicker dp = view.findViewById(R.id.search_more_choice_date_dp);
         TimePicker tp = view.findViewById(R.id.search_more_choice_time_tp);
         tp.setIs24HourView(true);
-
+        dp.setSpinnersShown(true);
         Calendar calendar = Calendar.getInstance();
         dp.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
             @Override
@@ -81,7 +80,6 @@ public class SearchMoreActivity extends BaseActivity implements SearchMoreContra
 
         final BottomSheetDialog dialog = new BottomSheetDialog(this);
         dialog.setContentView(view);
-
         view.findViewById(R.id.search_more_choice_dt__cancel_tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -70,8 +70,6 @@ public class PriceView extends View {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeCap(Paint.Cap.ROUND);
-
-
     }
 
     @Override
@@ -182,7 +180,6 @@ public class PriceView extends View {
             circleX2 = startWidth + Radius+Magin;
             circleY2 = startHeight + Radius + Magin+Magin/2;
         }
-
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.parseColor("#f5f5f5"));
         //开始半圆

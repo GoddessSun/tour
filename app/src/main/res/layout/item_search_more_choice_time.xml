@@ -38,8 +38,9 @@
             android:id="@+id/search_more_choice_date_dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:calendarViewShown="false"
             android:spinnersShown="true"
-            android:calendarViewShown="false" />
+            android:datePickerMode="spinner"/>
         <TimePicker
             android:id="@+id/search_more_choice_time_tp"
             android:layout_width="wrap_content"

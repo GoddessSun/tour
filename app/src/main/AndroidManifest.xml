@@ -81,6 +81,10 @@
         <activity android:name=".appointment.AppointDetailsActivity" />
         <activity android:name=".persion.PersionCenterActivity" />
         <activity android:name=".real.RealActivity"></activity>
+
+        <activity
+            android:name=".message.chat.ChatActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
