@@ -88,6 +88,7 @@ public class StarView extends View {
                 Position f = positionXY(b,c,d,e);
 
                 canvas.drawPoints(new float[]{
+
                         a.getX(),a.getY(),
                         b.getX(),b.getY(),
                         c.getX(),c.getY(),
