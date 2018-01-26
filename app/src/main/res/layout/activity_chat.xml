@@ -53,6 +53,7 @@
             android:layout_alignParentBottom="true"
             android:padding="@dimen/dimen10">
             <ImageView
+                android:id="@+id/chat_bottom_image_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_chat_image"/>
@@ -79,23 +80,11 @@
             android:layout_height="@dimen/base_line_height"
             android:background="@color/grayf2"
             android:layout_above="@id/chat_bottom_message_layout"/>
-        <com.sun.tour.view.ChatLinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00000000"
-            android:orientation="vertical"
-            android:padding="@dimen/dimen20">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1111111"/>
-        </com.sun.tour.view.ChatLinearLayout>
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/chat_list_smartrefreshlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/chat_line"
-            android:visibility="gone">
+            android:layout_above="@id/chat_line">
             <com.scwang.smartrefresh.layout.header.ClassicsHeader
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

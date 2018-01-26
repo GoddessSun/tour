@@ -80,11 +80,13 @@
         <activity android:name=".home.HotelDetailsActivity" />
         <activity android:name=".appointment.AppointDetailsActivity" />
         <activity android:name=".persion.PersionCenterActivity" />
-        <activity android:name=".real.RealActivity"></activity>
-
+        <activity android:name=".real.RealActivity" />
         <activity
             android:name=".message.chat.ChatActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".image.ChoiceImageActivity" />
+        <activity android:name=".image.preview.PreviewActivity" />
+        <activity android:name=".appointment.evaluate.EvaluateActivity"></activity>
     </application>
 
 </manifest>
