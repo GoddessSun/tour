@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,9 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private Unbinder mUnbinder;
     private long exitTime = 0;
     private MyProgressDialog myProgressDialog;
+    private ImageView mRightImageView;
+    private TextView mRightTextView;
+
     /**
      * 是否使用自己的布局，即不适用默认的toolbar以及默认的toolbar+content布局
      *
@@ -52,7 +56,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     public void setContentView(int layoutResID) {
         if (useOwnContentView()){//使用自定义布局
             super.setContentView(layoutResID);
-            SystemStatueBarUtil.setStatusBarLightMode(this, Color.parseColor("#ffffff"));
         }else {//使用默认布局
             SystemStatueBarUtil.setStatusBarLightMode(this, Color.parseColor("#ffffff"));
             LayoutInflater inflater = LayoutInflater.from(this);
@@ -62,6 +65,9 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             mFrameLayoutLeft = mRootView.findViewById(R.id.framelayout_left_base);
             mFrameLayoutLeft.setOnClickListener(this);
             mFrameLayoutRight = mRootView.findViewById(R.id.framelayout_right_base);
+            mRightImageView = mRootView.findViewById(R.id.image_base_right);
+            mRightTextView = mRootView.findViewById(R.id.text_base_small_title);
+            mFrameLayoutRight.setOnClickListener(this);
             super.setContentView(mRootView);
         }
         mUnbinder = ButterKnife.bind(this);
@@ -91,7 +97,34 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         mFrameLayoutRight.setVisibility(isVisible);
     }
 
+    /**
+     * 设置右侧小标题 文字
+     * @param rightText
+     */
+    public void setRightText(String rightText){
+        mFrameLayoutRight.setVisibility(View.VISIBLE);
+        mRightImageView.setVisibility(View.GONE);
+        mRightTextView.setVisibility(View.VISIBLE);
+        mRightTextView.setText(rightText);
+    }
 
+    /**
+     * 设置右侧图标按钮
+     * @param id
+     */
+    public void setRightImageView(int id){
+        mFrameLayoutRight.setVisibility(View.VISIBLE);
+        mRightImageView.setVisibility(View.VISIBLE);
+        mRightTextView.setVisibility(View.GONE);
+        mRightImageView.setImageResource(id);
+    }
+
+    /**
+     * 右侧如果有点击事件 重写该方法
+     */
+    private void onRightMenuClick() {
+
+    }
     /**
      * 更新loading信息
      * @param message
@@ -169,6 +202,11 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.framelayout_left_base://左侧返回按钮点击事件
                 onBackPressed();
                 break;
+
+            case R.id.framelayout_right_base://右侧图标或文字按钮
+                onRightMenuClick();
+                break;
         }
     }
+
 }
