@@ -48,6 +48,11 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         if (model.isHide()) {
             holder.layout.setVisibility(View.INVISIBLE);
         }
+        if (model.getWeek() == 7 || model.getWeek() == 6){
+            holder.tvDate.setTextColor(context.getResources().getColor(R.color.text_color999));
+        }else{
+            holder.tvDate.setTextColor(context.getResources().getColor(R.color.text_color333));
+        }
         holder.tvDate.setText(""+model.getDay());
     }
 

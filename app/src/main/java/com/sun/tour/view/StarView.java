@@ -1,6 +1,7 @@
 package com.sun.tour.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.scwang.smartrefresh.layout.util.DensityUtil;
+import com.sun.tour.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +30,10 @@ public class StarView extends View {
     private float radius;
     private int magin;
     private Paint paint;
-    private int radius1;
     private List<Position> position;
-
+    private List<Float> evaluates;
+    private Context context;
+    private boolean touch;
     public StarView(Context context) {
         super(context);
     }
@@ -46,20 +49,84 @@ public class StarView extends View {
     }
 
     private void init(Context context, AttributeSet attrs) {
-
+        this.context = context;
+        TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.StarView);
+        startNum = arr.getInteger(R.styleable.StarView_count,5);
         radius = DensityUtil.dp2px(12);
         magin = DensityUtil.dp2px(10);
-        radius1 = DensityUtil.dp2px(1f);
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setColor(Color.RED);
     }
 
+    public boolean isTouch() {
+        return touch;
+    }
 
+    /**
+     *
+     * 设置是否可触摸
+     *
+     * @param touch
+     */
+    public void setTouch(boolean touch) {
+        this.touch = touch;
+    }
+
+    /**
+     *
+     *
+     * 选中的个数
+     *
+     * @param max  最大评分
+     * @param e   评分
+     */
+    public void setEvaluate(float max, float e){
+
+        float base = max / startNum;
+        if (e > max){
+            e = max;
+        }
+        double v = e / base;
+        float p1 = (int) v;
+        float p2 = (float) (v - p1);
+        evaluates = new ArrayList<>();
+        for (int i = 0; i < p1; i++) {
+            evaluates.add(1f);
+        }
+        if (p2 >0.5){
+            evaluates.add(1f);
+        }else{
+            evaluates.add(0.5f);
+        }
+        int evSize = evaluates.size();
+        for (int i = 0; i < startNum - evSize; i++) {
+
+            evaluates.add(0f);
+        }
+
+        if (position != null){
+
+            for (int i = 0; i < position.size(); i++) {
+
+                Position position = this.position.get(i);
+                Float f = evaluates.get(i);
+                if (f == 1.0f){
+                    position.setType(ALL);
+                }else if (f == 0.5f){
+                    position.setType(OTHER);
+                }
+            }
+        }
+        invalidate();
+    }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
+        if (!touch){
+            return super.onTouchEvent(event);
+        }
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 down(event.getX(),event.getY());
@@ -233,6 +300,7 @@ public class StarView extends View {
     private float cos(float angle){
         return (float) (Math.cos(Math.PI*2/360*angle)*radius);
     }
+
     private List<Position> position(float width, float height){
 
         float v = width / startNum;
@@ -245,13 +313,34 @@ public class StarView extends View {
             startX = width/2 - v*c;
         }
         List<Position> data = new ArrayList<>();
-        for (int i = 0; i < startNum; i++) {
+        if (evaluates != null){
+            for (int i = 0; i < startNum; i++) {
 
-            Position p = new Position();
-            p.setX(startX+v*i);
-            p.setY(startY);
-            data.add(p);
+                Position p = new Position();
+                p.setX(startX+v*i);
+                p.setY(startY);
+                Float f = evaluates.get(i);
+                if (f == 1.0f){
+                    p.setChecked(true);
+                    p.setType(ALL);
+                }else if (f == 0.5f){
+                    p.setChecked(true);
+                    p.setType(OTHER);
+                }else{
+                    p.setChecked(false);
+                }
+                data.add(p);
+            }
+        }else{
+            for (int i = 0; i < startNum; i++) {
+
+                Position p = new Position();
+                p.setX(startX+v*i);
+                p.setY(startY);
+                data.add(p);
+            }
         }
+
         return data;
     }
 

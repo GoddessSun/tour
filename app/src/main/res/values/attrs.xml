@@ -40,4 +40,7 @@
         </attr>
         <attr name="mHeight" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="StarView">
+        <attr name="count" format="integer"/>
+    </declare-styleable>
 </resources>

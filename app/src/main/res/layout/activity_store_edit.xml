@@ -53,8 +53,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/dimen15"
-                android:paddingBottom="@dimen/dimen15"
+                android:paddingTop="@dimen/dimen10"
+                android:paddingBottom="@dimen/dimen10"
                 android:paddingLeft="@dimen/dimen20"
                 android:paddingRight="@dimen/dimen20"
                 android:textSize="@dimen/text_normal_size"
@@ -275,8 +275,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/dimen15"
-                android:paddingBottom="@dimen/dimen15"
+                android:paddingTop="@dimen/dimen10"
+                android:paddingBottom="@dimen/dimen10"
                 android:paddingLeft="@dimen/dimen20"
                 android:paddingRight="@dimen/dimen20"
                 android:textSize="@dimen/text_normal_size"

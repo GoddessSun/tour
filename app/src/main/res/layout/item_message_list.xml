@@ -12,15 +12,15 @@
 
         <ImageView
             android:id="@+id/message_icon_iv"
-            android:layout_width="@dimen/dimen60"
-            android:layout_height="@dimen/dimen60"
+            android:layout_width="@dimen/dimen50"
+            android:layout_height="@dimen/dimen50"
             android:background="@color/text_color666"
             android:layout_margin="@dimen/dimen10"/>
         <TextView
             android:id="@+id/message_name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_normal_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:text="王大爷"
             android:layout_toRightOf="@id/message_icon_iv"
@@ -33,7 +33,7 @@
             android:id="@+id/message_time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/title_small_txt_size"
+            android:textSize="@dimen/txt_size12"
             android:textColor="@color/text_color999"
             android:text="2011-09-23 12:23"
             android:layout_alignParentRight="true"
@@ -43,7 +43,7 @@
             android:id="@+id/message_content_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/title_small_txt_size"
+            android:textSize="@dimen/txt_size12"
             android:textColor="@color/text_color999"
             android:text="这是什么东西"
             android:layout_alignLeft="@id/message_name_tv"

@@ -1,6 +1,5 @@
 package com.sun.tour;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -29,6 +28,7 @@ import com.sun.tour.home.HomeFragment;
 import com.sun.tour.message.MessageFragment;
 import com.sun.tour.store.StoreFragment;
 import com.sun.tour.utils.Constant;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,7 +73,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main,true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             StatusBarUtil.transparencyBar(this);
         }
