@@ -119,12 +119,24 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         mRightImageView.setImageResource(id);
     }
 
+    public TextView getRightTextView(){
+        return mRightTextView;
+    }
+
+    public ImageView getRightImageView(){
+        return mRightImageView;
+    }
     /**
      * 右侧如果有点击事件 重写该方法
      */
     private void onRightMenuClick() {
-
     }
+    /**
+     * 右侧如果有点击事件 重写该方法
+     */
+    private void onRightMenuClick(TextView rightTextView) {
+    }
+
     /**
      * 更新loading信息
      * @param message
@@ -205,8 +217,11 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.framelayout_right_base://右侧图标或文字按钮
                 onRightMenuClick();
+                onRightMenuClick(mRightTextView);
                 break;
         }
     }
+
+
 
 }
