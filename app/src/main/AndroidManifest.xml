@@ -86,7 +86,21 @@
             android:screenOrientation="portrait" />
         <activity android:name=".image.ChoiceImageActivity" />
         <activity android:name=".image.preview.PreviewActivity" />
-        <activity android:name=".appointment.evaluate.EvaluateActivity"></activity>
+        <activity android:name=".appointment.evaluate.EvaluateActivity" />
+        <activity android:name=".store.store_edit.StoreEditActivity" />
+        <activity android:name=".store.classify.SpeciesActivity" />
+        <activity android:name=".store.nature.MainNatureActivity" />
+        <activity android:name=".store.grade.GradeAddActivity" />
+        <activity android:name=".store.address.AddressActivity" />
+        <activity android:name=".store.price.PriceActivity" />
+        <activity android:name=".store.image.ImageActivity" />
+        <activity android:name=".store.text.TextActivity" />
+        <activity android:name=".store.identity.IdentityActivity" />
+        <activity android:name=".schedule.ScheduleActivity" />
+        <activity android:name=".city.ChoiceCityActivity" />
+        <activity android:name=".setting.SettingActivity" />
+        <activity android:name=".persion.help.HelpActivity" />
+        <activity android:name=".login.forgetpassword.PasswordForgetActivity"></activity>
     </application>
 
 </manifest>

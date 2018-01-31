@@ -2,6 +2,7 @@ package com.sun.tour.home;
 
 
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -134,13 +135,25 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-    @OnClick(R.id.circle_image_view_persion)
-    public void onPersionClick(){
-//        if (mDrawerLayout!=null){
-//            mDrawerLayout.openDrawer(GravityCompat.START);
-//        }
-        ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/search/search_activity")
-                .navigation();
+    @OnClick({R.id.circle_image_view_persion,R.id.text_search,R.id.home_location_tv})
+    public void onPersionClick(View view){
+
+        switch (view.getId()){
+            case R.id.circle_image_view_persion:
+                if (mDrawerLayout!=null){
+                    mDrawerLayout.openDrawer(GravityCompat.START);
+                }
+                break;
+            case R.id.text_search:
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/search/search_activity")
+                        .navigation();
+                break;
+            case R.id.home_location_tv:
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/city/choicecity_activity")
+                        .navigation();
+                break;
+        }
+
     }
 
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen20">
+        <TextView
+            android:id="@+id/store_address_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_small_txt_size"
+            android:textColor="@color/text_color333"
+            android:text="[地址一]" />
+        <TextView
+            android:id="@+id/store_address_handler_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_small_txt_size"
+            android:textColor="@color/text_color999"
+            android:text="必填"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dimen10"/>
+        <TextView
+            android:id="@+id/store_address_edit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue43"
+            android:textSize="@dimen/title_small_txt_size"
+            android:text="编辑"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/store_address_handler_tv"
+            android:layout_marginTop="@dimen/dimen10"/>
+        <TextView
+            android:id="@+id/store_address_info_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_small_txt_size"
+            android:textColor="@color/text_color999"
+            android:text="选择地址"
+            android:layout_alignTop="@id/store_address_edit_tv"
+            android:layout_toLeftOf="@id/store_address_edit_tv"/>
+    </RelativeLayout>
+    <View
+        android:id="@+id/store_address_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen10"
+        android:background="@color/grayf2"/>
+</LinearLayout>

@@ -26,6 +26,7 @@ import com.sun.tour.focus.FocusFragment;
 import com.sun.tour.home.HomeFragment;
 import com.sun.tour.message.MessageFragment;
 import com.sun.tour.store.StoreFragment;
+import com.sun.tour.utils.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,6 +114,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener
         mUserIcon = mDrawerLayoutView.findViewById(R.id.circle_image_user_icon);
         mUserNameTextView = mDrawerLayoutView.findViewById(R.id.text_main_user_name);
         mUserSignTextView = mDrawerLayoutView.findViewById(R.id.text_main_user_sign);
+        mUserIcon.setOnClickListener(this);
         mDrawerLayoutView.findViewById(R.id.text_persion_info).setOnClickListener(this);
         mDrawerLayoutView.findViewById(R.id.text_authy).setOnClickListener(this);
         mDrawerLayoutView.findViewById(R.id.text_notiycation).setOnClickListener(this);
@@ -135,11 +137,15 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener
             case R.id.text_notiycation://系统通知
                 break;
             case R.id.text_help://帮助
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/persion/help/help_activity").navigation(this);
                 break;
             case R.id.text_setting://设置
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/setting/setting_activity").navigation();
                 break;
             case R.id.text_login_register://登录
+                ARouter.getInstance().build("/tour/login/login_activity").navigation();
                 break;
+
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
     }

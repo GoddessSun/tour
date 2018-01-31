@@ -1,18 +1,18 @@
 package com.sun.tour.login;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.text.method.TransformationMethod;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
+import com.sun.tour.utils.Constant;
 import com.sun.tour.utils.MobileCheckUtil;
 import com.sun.tour.view.RxToast;
 
@@ -72,10 +72,12 @@ public class LoginActivity extends BaseActivity {
     @OnClick(R.id.text_register)//注册
     public void onRefisterClick(){
 
+        ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/regist/regist_activity").navigation(this);
     }
 
     @OnClick(R.id.text_forget_password)//忘记密码
     public void onForgetPasswordClick(){
 
+        ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/login/forgetpassword/passwordforget_activity").navigation(this);
     }
 }

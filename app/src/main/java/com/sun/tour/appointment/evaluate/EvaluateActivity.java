@@ -1,7 +1,6 @@
 package com.sun.tour.appointment.evaluate;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sun.tour.R;
@@ -26,7 +25,6 @@ public class EvaluateActivity extends BaseActivity {
 
     private void init() {
 
-        double sin = Math.sin(Math.PI * 2 / 360 * 90);
-        Log.e("rtewrwer","---------------------="+sin);
+        setTitle("评价");
     }
 }

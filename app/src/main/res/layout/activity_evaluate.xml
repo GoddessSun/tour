@@ -1,12 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/grayf2"
     tools:context="com.sun.tour.appointment.evaluate.EvaluateActivity">
-    <com.sun.tour.view.StarView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="@dimen/dimen20">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen48">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color333"
+                android:textSize="@dimen/text_normal_size"
+                android:text="管理者服务态度"
+                android:layout_centerVertical="true"/>
+            <com.sun.tour.view.StarView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen48">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color333"
+                android:textSize="@dimen/text_normal_size"
+                android:text="遵守时间"
+                android:layout_centerVertical="true"/>
+            <com.sun.tour.view.StarView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen48">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color333"
+                android:textSize="@dimen/text_normal_size"
+                android:text="对象状况"
+                android:layout_centerVertical="true"/>
+            <com.sun.tour.view.StarView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_line_height"
+            android:background="@color/grayf2"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dimen100"
+            android:background="@null"
+            android:textSize="@dimen/text_normal_size"
+            android:textColor="@color/text_color333"
+            android:hint="评价具体内容(100字)"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/dimen10"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen48"
+        android:textSize="@dimen/text_normal_size"
+        android:textColor="@color/white"
+        android:text="确定"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"/>
+</RelativeLayout>

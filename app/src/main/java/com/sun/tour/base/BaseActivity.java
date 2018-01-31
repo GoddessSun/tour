@@ -2,9 +2,9 @@ package com.sun.tour.base;
 
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +16,7 @@ import com.sun.tour.R;
 import com.sun.tour.utils.SystemStatueBarUtil;
 import com.sun.tour.view.MyProgressDialog;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener{

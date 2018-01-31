@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/species_brand_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:textSize="@dimen/title_txt_size"
+        android:textColor="@color/text_color333"
+        android:text="选择品牌"
+        android:gravity="center"/>
+    <View
+        android:id="@+id/species_brand_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_line_height"
+        android:background="@color/grayf2"
+        android:layout_below="@id/species_brand_title_tv"/>
+    <Button
+        android:id="@+id/species_brand_dialog_bottom_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:textSize="@dimen/text_normal_size"
+        android:textColor="@color/white"
+        android:background="@drawable/water_ripple"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dimen10"
+        android:text="确  定"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/species_brand_dialog_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/species_brand_dialog_bottom_btn"
+        android:layout_below="@id/species_brand_line"/>
+</RelativeLayout>

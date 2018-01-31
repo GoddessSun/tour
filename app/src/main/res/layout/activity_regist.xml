@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:text="手机号"/>
         <EditText
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:hint="请输入手机号码"
             android:textColorHint="@color/text_color666"
@@ -35,7 +35,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/base_line_height"
-        android:background="@color/text_color999"/>
+        android:background="@color/grayf2"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen48"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:text="验证码"/>
         <EditText
@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:hint="请输入验证码"
             android:textColorHint="@color/text_color666"
@@ -65,13 +65,13 @@
             android:layout_width="@dimen/base_line_height"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/dimen10"
-            android:background="@color/text_color999"/>
+            android:background="@color/grayf2"/>
         <TextView
             android:id="@+id/regist_get_code_tv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/blue43"
             android:text="获取验证码"
             android:gravity="center"/>
@@ -79,7 +79,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/base_line_height"
-        android:background="@color/text_color999"/>
+        android:background="@color/grayf2"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen48"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:text="昵   称"/>
         <EditText
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:textSize="@dimen/title_txt_size"
+            android:textSize="@dimen/title_small_txt_size"
             android:textColor="@color/text_color333"
             android:hint="请输入昵称"
             android:textColorHint="@color/text_color666"
@@ -107,7 +107,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/base_line_height"
-        android:background="@color/text_color999"/>
+        android:background="@color/grayf2"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -119,14 +119,14 @@
             android:id="@+id/regist_agreenment_cb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/title_small_txt_size"
+            android:textSize="@dimen/txt_size12"
             android:textColor="@color/text_color666"
             android:text="已阅读并同意"/>
         <TextView
             android:id="@+id/regist_agreenment_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/title_small_txt_size"
+            android:textSize="@dimen/txt_size12"
             android:textColor="@color/blue43"
             android:text="《用户协议》"
             android:layout_marginLeft="@dimen/dimen10"/>
@@ -136,7 +136,7 @@
         android:id="@+id/regist_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen48"
-        android:textSize="@dimen/title_txt_size"
+        android:textSize="@dimen/text_normal_size"
         android:textColor="@color/white"
         android:text="下一步"
         android:background="@drawable/water_ripple"
