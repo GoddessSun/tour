@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_item_dialog_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:gravity="center"
+        android:text="相机"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/text_color333"
+        android:textSize="@dimen/text_normal_size" />
+
+    <View
+        android:id="@+id/view_line_item_bottom_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/backgraound" />
+
+</LinearLayout>

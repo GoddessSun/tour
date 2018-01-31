@@ -108,6 +108,7 @@
                     android:layout_below="@id/image_appoint_details_hotel"
                     android:layout_marginTop="16dp"/>
                 <LinearLayout
+                    android:id="@+id/linear_appoint_detail_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"

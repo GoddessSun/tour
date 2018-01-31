@@ -100,7 +100,8 @@
         <activity android:name=".city.ChoiceCityActivity" />
         <activity android:name=".setting.SettingActivity" />
         <activity android:name=".persion.help.HelpActivity" />
-        <activity android:name=".login.forgetpassword.PasswordForgetActivity"></activity>
+        <activity android:name=".login.forgetpassword.PasswordForgetActivity" />
+        <activity android:name=".appointment.AppointPhotosActivity"></activity>
     </application>
 
 </manifest>
