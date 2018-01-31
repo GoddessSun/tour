@@ -52,6 +52,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     public void setContentView(int layoutResID) {
         if (useOwnContentView()){//使用自定义布局
             super.setContentView(layoutResID);
+            SystemStatueBarUtil.setStatusBarLightMode(this, Color.parseColor("#ffffff"));
         }else {//使用默认布局
             SystemStatueBarUtil.setStatusBarLightMode(this, Color.parseColor("#ffffff"));
             LayoutInflater inflater = LayoutInflater.from(this);
