@@ -173,7 +173,8 @@ public class SystemStatueBarUtil {
                     setStatusBarColor(activity, color);
                 }
             }else {
-                Log.e("","6.0以下，非魅族小米手机");
+                setStatusBarColorKitkat(activity,Color.BLACK);
+                Log.e("tag","6.0以下，非魅族小米手机");
             }
         }
     }
