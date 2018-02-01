@@ -6,6 +6,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.amap.api.location.AMapLocation;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 import com.sun.tour.view.ClearEditText;
@@ -123,5 +124,18 @@ public class ChoiceCityFragment extends BaseFragment {
         nowAdapter.notifyDataSetChanged();
         hotAdapter.notifyDataSetChanged();
         mAdapter.notifyDataSetChanged();
+    }
+
+    public void setLocation(AMapLocation aMapLocation){
+
+        if (aMapLocation != null){
+            nowData.clear();
+            nowData.add(aMapLocation.getCity());
+            nowAdapter.notifyDataSetChanged();
+            tvNowLocation.setVisibility(View.GONE);
+            nowGV.setVisibility(View.VISIBLE);
+        }
+
+
     }
 }

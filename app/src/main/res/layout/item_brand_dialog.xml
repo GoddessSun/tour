@@ -17,6 +17,7 @@
         android:layout_height="@dimen/base_line_height"
         android:background="@color/grayf2"
         android:layout_below="@id/species_brand_title_tv"/>
+
     <Button
         android:id="@+id/species_brand_dialog_bottom_btn"
         android:layout_width="match_parent"
@@ -24,8 +25,8 @@
         android:textSize="@dimen/text_normal_size"
         android:textColor="@color/white"
         android:background="@drawable/water_ripple"
-        android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/dimen10"
+        android:layout_alignParentBottom="true"
         android:text="确  定"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/species_brand_dialog_rv"
@@ -33,4 +34,5 @@
         android:layout_height="match_parent"
         android:layout_above="@id/species_brand_dialog_bottom_btn"
         android:layout_below="@id/species_brand_line"/>
+
 </RelativeLayout>

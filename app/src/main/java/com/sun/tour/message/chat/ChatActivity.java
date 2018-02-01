@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
+import com.sun.tour.image.ChoiceImageUtil;
 import com.sun.tour.utils.Constant;
 
 import java.util.ArrayList;
@@ -58,6 +60,20 @@ public class ChatActivity extends BaseActivity implements ChatContract.View {
             data.add("测试-----"+i);
         }
         mAdapter.notifyDataSetChanged();
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                List<String> d = new ArrayList<>();
+                d.addAll(data);
+                data.clear();
+                for (int i = 0; i < 20; i++) {
+                    data.add("测试-----"+i);
+                }
+                data.addAll(d);
+                mAdapter.notifyDataSetChanged();
+                refreshlayout.finishRefresh(2000);
+            }
+        });
     }
 
     @Override
@@ -72,9 +88,9 @@ public class ChatActivity extends BaseActivity implements ChatContract.View {
         switch (v.getId()) {
             case R.id.chat_bottom_image_iv:
 //                ChoiceImageUtil.tophoto(this,null,9,2);
-//                ChoiceImageUtil.tophoto(this,true,11);
-                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/appointment/evaluate/evaluate_activity")
-                        .navigation(this);
+                ChoiceImageUtil.tophoto(this,true,11);
+//                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/appointment/evaluate/evaluate_activity")
+//                        .navigation(this);
                 break;
         }
     }

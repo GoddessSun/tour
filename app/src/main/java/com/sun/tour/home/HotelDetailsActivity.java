@@ -1,18 +1,21 @@
 package com.sun.tour.home;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
+import com.sun.tour.utils.Constant;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.bingoogolapple.bgabanner.BGABanner;
 
 @Route(path = "/tour/home/hotel_details_activity")
@@ -46,5 +49,16 @@ public class HotelDetailsActivity extends BaseActivity {
         });
         mBGABanner.setAutoPlayAble(false);
         mBGABanner.setData(Arrays.asList(url01,url02,url03,url04,url05), Arrays.asList("", "", "","",""));
+    }
+
+    @OnClick({R.id.hotel_detail_subscribe_btn})
+    public void onClick(View view){
+
+        switch (view.getId()) {
+            case R.id.hotel_detail_subscribe_btn:
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/home/subscribe/subscribe_activity")
+                        .navigation(this);
+                break;
+        }
     }
 }

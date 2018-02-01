@@ -242,55 +242,36 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingRight="@dimen/dimen16"
                 android:paddingLeft="@dimen/dimen16"
                 android:paddingTop="@dimen/dimen10"
                 android:paddingBottom="@dimen/dimen10"
                 android:gravity="center_vertical">
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="成交率"
                         android:textSize="14sp"
                         android:textColor="@color/text_color666"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="98%"
-                        android:textColor="@color/text_color333"
-                        android:textSize="28sp"
-                        android:layout_marginTop="@dimen/dimen10"
-                        android:layout_marginBottom="@dimen/dimen10"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="97件 / 100件"
-                        android:textSize="@dimen/txt_size12"
-                        android:textColor="@color/text_color999"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0.2dp"
-                    android:layout_height="90dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="@dimen/dimen16"
-                    android:background="@color/color_base_line"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                    <View
+                        android:layout_width="@dimen/base_line_height"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayec"
+                        android:layout_marginLeft="@dimen/dimen10"/>
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen20">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -298,14 +279,16 @@
                             android:textSize="12sp"
                             android:textColor="@color/text_color999"
                             android:layout_marginRight="10dp"/>
-
-                        <RatingBar
+                        <com.sun.tour.view.StarView
+                            android:id="@+id/starview"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RatingBarStyle"
-                            android:numStars="5"
-                            android:progress="3"/>
-
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            app:count="5"
+                            app:touch="false"
+                            app:evaluate_max="100"
+                            app:evaluate="98"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -314,28 +297,48 @@
                             android:text="[98%]"
                             android:layout_marginLeft="@dimen/dimen10"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:text="98%"
+                        android:textSize="28sp"
+                        android:textColor="@color/text_color333"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="@dimen/base_line_height"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayec"
+                        android:layout_marginLeft="@dimen/dimen10"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
                         android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/dimen10"
-                        android:layout_marginBottom="@dimen/dimen10">
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen20">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="处理时间"
+                            android:text="对应态度"
                             android:textSize="12sp"
                             android:textColor="@color/text_color999"
                             android:layout_marginRight="10dp"/>
-
-                        <RatingBar
+                        <com.sun.tour.view.StarView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RatingBarStyle"
-                            android:numStars="5"
-                            android:progress="3"/>
-
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            app:count="5"
+                            app:touch="false"
+                            app:evaluate_max="100"
+                            app:evaluate="98"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -344,26 +347,47 @@
                             android:text="[98%]"
                             android:layout_marginLeft="@dimen/dimen10"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:text="成交率"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color666"/>
+                    <View
+                        android:layout_width="@dimen/base_line_height"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayec"
+                        android:layout_marginLeft="@dimen/dimen10"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen20">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="文明使用"
+                            android:text="对应态度"
                             android:textSize="12sp"
                             android:textColor="@color/text_color999"
                             android:layout_marginRight="10dp"/>
-
-                        <RatingBar
+                        <com.sun.tour.view.StarView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RatingBarStyle"
-                            android:numStars="5"
-                            android:progress="3"/>
-
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            app:count="5"
+                            app:touch="false"
+                            app:evaluate_max="100"
+                            app:evaluate="98"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -372,7 +396,6 @@
                             android:text="[98%]"
                             android:layout_marginLeft="@dimen/dimen10"/>
                     </LinearLayout>
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -422,55 +445,36 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingRight="@dimen/dimen16"
                 android:paddingLeft="@dimen/dimen16"
                 android:paddingTop="@dimen/dimen10"
                 android:paddingBottom="@dimen/dimen10"
                 android:gravity="center_vertical">
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="成交率"
                         android:textSize="14sp"
                         android:textColor="@color/text_color666"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="98%"
-                        android:textColor="@color/text_color333"
-                        android:textSize="28sp"
-                        android:layout_marginTop="@dimen/dimen10"
-                        android:layout_marginBottom="@dimen/dimen10"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="97件 / 100件"
-                        android:textColor="@color/text_color999"
-                        android:textSize="@dimen/txt_size12"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0.2dp"
-                    android:layout_height="90dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="@dimen/dimen16"
-                    android:background="@color/color_base_line"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                    <View
+                        android:layout_width="@dimen/base_line_height"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayec"
+                        android:layout_marginLeft="@dimen/dimen10"/>
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen20">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -478,14 +482,16 @@
                             android:textSize="12sp"
                             android:textColor="@color/text_color999"
                             android:layout_marginRight="10dp"/>
-
-                        <RatingBar
+                        <com.sun.tour.view.StarView
+                            android:id="@+id/starview"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RatingBarStyle"
-                            android:numStars="5"
-                            android:progress="3"/>
-
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            app:count="5"
+                            app:touch="false"
+                            app:evaluate_max="100"
+                            app:evaluate="98"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -494,28 +500,48 @@
                             android:text="[98%]"
                             android:layout_marginLeft="@dimen/dimen10"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:text="98%"
+                        android:textSize="28sp"
+                        android:textColor="@color/text_color333"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="@dimen/base_line_height"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayec"
+                        android:layout_marginLeft="@dimen/dimen10"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
                         android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/dimen10"
-                        android:layout_marginBottom="@dimen/dimen10">
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen20">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="处理时间"
+                            android:text="对应态度"
                             android:textSize="12sp"
                             android:textColor="@color/text_color999"
                             android:layout_marginRight="10dp"/>
-
-                        <RatingBar
+                        <com.sun.tour.view.StarView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RatingBarStyle"
-                            android:numStars="5"
-                            android:progress="3"/>
-
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            app:count="5"
+                            app:touch="false"
+                            app:evaluate_max="100"
+                            app:evaluate="98"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -524,26 +550,47 @@
                             android:text="[98%]"
                             android:layout_marginLeft="@dimen/dimen10"/>
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen40"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:text="成交率"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_color666"/>
+                    <View
+                        android:layout_width="@dimen/base_line_height"
+                        android:layout_height="match_parent"
+                        android:background="@color/grayec"
+                        android:layout_marginLeft="@dimen/dimen10"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen20">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="文明使用"
+                            android:text="对应态度"
                             android:textSize="12sp"
                             android:textColor="@color/text_color999"
                             android:layout_marginRight="10dp"/>
-
-                        <RatingBar
+                        <com.sun.tour.view.StarView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RatingBarStyle"
-                            android:numStars="5"
-                            android:progress="3"/>
-
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            app:count="5"
+                            app:touch="false"
+                            app:evaluate_max="100"
+                            app:evaluate="98"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -552,7 +599,6 @@
                             android:text="[98%]"
                             android:layout_marginLeft="@dimen/dimen10"/>
                     </LinearLayout>
-
                 </LinearLayout>
 
             </LinearLayout>

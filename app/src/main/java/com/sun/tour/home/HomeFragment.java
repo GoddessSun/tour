@@ -20,8 +20,6 @@ import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 import com.sun.tour.home.adapter.NearbyAdapter;
 import com.sun.tour.utils.Constant;
-import com.sun.tour.utils.SelectDialogUtils;
-import com.sun.tour.view.RxToast;
 
 import java.util.Arrays;
 
@@ -137,7 +135,8 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.circle_image_view_persion,R.id.text_search,R.id.home_location_tv})
+    @OnClick({R.id.circle_image_view_persion,R.id.text_search,R.id.home_location_tv,
+            R.id.home_near_more_tv,R.id.home_near_hot_tv})
     public void onPersionClick(View view){
 
         switch (view.getId()){
@@ -151,17 +150,25 @@ public class HomeFragment extends BaseFragment {
                         .navigation();
                 break;
             case R.id.home_location_tv:
-                final SelectDialogUtils selectDialogUtils = new SelectDialogUtils(getHoldingActivity(),Arrays.asList("相机","从相册中选择","取消"));
-                selectDialogUtils.showDialog();
-                selectDialogUtils.setOnItemDialogClick(new SelectDialogUtils.OnItemDialogClick() {
-                    @Override
-                    public void onClick(int position) {
-                        RxToast.info("点击："+position);
-                        selectDialogUtils.dismissDialog();
-                    }
-                });
-//                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/city/choicecity_activity")
-//                        .navigation();
+//                final SelectDialogUtils selectDialogUtils = new SelectDialogUtils(getHoldingActivity(),Arrays.asList("相机","从相册中选择","取消"));
+//                selectDialogUtils.showDialog();
+//                selectDialogUtils.setOnItemDialogClick(new SelectDialogUtils.OnItemDialogClick() {
+//                    @Override
+//                    public void onClick(int position) {
+//                        RxToast.info("点击："+position);
+//                        selectDialogUtils.dismissDialog();
+//                    }
+//                });
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/city/choicecity_activity")
+                        .navigation();
+                break;
+            case R.id.home_near_more_tv:
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/home/near/near_activity")
+                        .navigation();
+                break;
+            case R.id.home_near_hot_tv:
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/home/near/near_activity")
+                        .navigation();
                 break;
         }
 

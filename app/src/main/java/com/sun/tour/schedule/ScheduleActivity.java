@@ -12,8 +12,6 @@ import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
 import com.sun.tour.utils.Constant;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,12 +76,7 @@ public class ScheduleActivity extends BaseActivity implements ScheduleContract.V
         rv.setLayoutManager(new GridLayoutManager(this,7));
         mAdapter = new ScheduleAdapter(this,data);
         rv.setAdapter(mAdapter);
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            presenter.findData(format.parse("2018-2-12").getTime());
-        }catch (ParseException e){
-            e.printStackTrace();
-        }
+        presenter.findData(System.currentTimeMillis());
 
     }
 

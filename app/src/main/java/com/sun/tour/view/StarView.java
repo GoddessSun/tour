@@ -34,6 +34,9 @@ public class StarView extends View {
     private List<Float> evaluates;
     private Context context;
     private boolean touch;
+    private float evaluate_max;
+    private float evaluate;
+
     public StarView(Context context) {
         super(context);
     }
@@ -52,12 +55,16 @@ public class StarView extends View {
         this.context = context;
         TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.StarView);
         startNum = arr.getInteger(R.styleable.StarView_count,5);
+        touch = arr.getBoolean(R.styleable.StarView_touch,false);
+        evaluate_max = arr.getFloat(R.styleable.StarView_evaluate_max,startNum);
+        evaluate = arr.getFloat(R.styleable.StarView_evaluate,0);
         radius = DensityUtil.dp2px(12);
         magin = DensityUtil.dp2px(10);
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setColor(Color.RED);
+        judgeCheckedData();
     }
 
     public boolean isTouch() {
@@ -79,16 +86,22 @@ public class StarView extends View {
      *
      * 选中的个数
      *
-     * @param max  最大评分
-     * @param e   评分
+     * @param evaluate_max  最大评分
+     * @param evaluate   评分
      */
-    public void setEvaluate(float max, float e){
+    public void setEvaluate(float evaluate_max, float evaluate){
+        this.evaluate_max = evaluate_max;
+        this.evaluate = evaluate;
 
-        float base = max / startNum;
-        if (e > max){
-            e = max;
+        judgeCheckedData();
+    }
+
+    private void judgeCheckedData(){
+        float base = evaluate_max / startNum;
+        if (evaluate > evaluate_max){
+            evaluate = evaluate_max;
         }
-        double v = e / base;
+        double v = evaluate / base;
         float p1 = (int) v;
         float p2 = (float) (v - p1);
         evaluates = new ArrayList<>();
@@ -118,8 +131,9 @@ public class StarView extends View {
                     position.setType(OTHER);
                 }
             }
+            invalidate();
         }
-        invalidate();
+
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -180,8 +194,7 @@ public class StarView extends View {
         int heightMeasureSize = MeasureSpec.getSize(heightMeasureSpec);
 
         int defaultSize = DensityUtil.dp2px(40);
-        int defaultWidthSize = getResources().getDisplayMetrics().widthPixels/3;
-//        int defaultWidthSize = DensityUtil.dp2px(200);
+        int defaultWidthSize = DensityUtil.dp2px(100);
         if (widthMeasureMode == MeasureSpec.AT_MOST && heightMeasureMode == MeasureSpec.AT_MOST){
 
             setMeasuredDimension(defaultWidthSize,defaultSize);

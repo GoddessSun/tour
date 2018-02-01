@@ -28,6 +28,13 @@
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:name=".TourApplation"
         android:allowBackup="true"
@@ -101,7 +108,16 @@
         <activity android:name=".setting.SettingActivity" />
         <activity android:name=".persion.help.HelpActivity" />
         <activity android:name=".login.forgetpassword.PasswordForgetActivity" />
-        <activity android:name=".appointment.AppointPhotosActivity"></activity>
+        <activity android:name=".appointment.AppointPhotosActivity" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="5c322104b755934494c6b2d8920ba2c4" />
+
+        <activity android:name=".home.near.NearActivity" />
+        <activity android:name=".home.subscribe.SubscribeActivity"></activity>
     </application>
 
 </manifest>

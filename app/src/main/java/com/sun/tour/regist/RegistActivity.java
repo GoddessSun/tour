@@ -40,7 +40,6 @@ public class RegistActivity extends BaseActivity implements RegistContract.View 
 
     private void init() {
         //初始化头部
-        setLeftVisibility(View.VISIBLE);
         setTopTitle(getResources().getString(R.string.regist));
         //初始化mvp
         RegistPresenter registPresenter = new RegistPresenter(this);

@@ -103,6 +103,8 @@ public class SchedulePresenter implements ScheduleContract.Presenter {
                         if (start == null || end == null){
                             return null;
                         }
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(new Date(date));
                         int year = start.getYear();
                         int month = start.getMonth();
                         int startDay = start.getDay();
@@ -123,6 +125,9 @@ public class SchedulePresenter implements ScheduleContract.Presenter {
                             model.setDay(i);
                             model.setDate(year+"-"+month+"-"+i);
                             model.setWeek(startWeek);
+                            if (i == calendar.get(Calendar.DAY_OF_MONTH)){
+                                model.setChecked(true);
+                            }
                             if (startWeek >= 7){
                                 startWeek = 1;
                             }else{

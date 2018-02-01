@@ -42,5 +42,23 @@
     </declare-styleable>
     <declare-styleable name="StarView">
         <attr name="count" format="integer"/>
+        <attr name="touch" format="boolean"/>
+        <attr name="evaluate_max" format="float"/>
+        <attr name="evaluate" format="float"/>
+    </declare-styleable>
+    <declare-styleable name="SortView">
+        <attr name="sText" format="string"/>
+        <attr name="sTextSize" format="dimension"/>
+        <attr name="sTextColor" format="color"/>
+        <attr name="sort">
+            <enum name="sort_default" value="1"/>
+            <enum name="up" value="2"/>
+            <enum name="down" value="3"/>
+        </attr>
+        <attr name="showSortIcon" format="boolean"/>
+        <attr name="showBottomLine" format="boolean"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="lineHeight" format="dimension"/>
+        <attr name="checked" format="boolean"/>
     </declare-styleable>
 </resources>

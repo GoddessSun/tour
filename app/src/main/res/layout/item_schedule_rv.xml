@@ -5,17 +5,18 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:id="@+id/schedule_item_layout"
-    android:gravity="center">
+    android:gravity="center"
+    android:paddingTop="@dimen/dimen10">
     <TextView
         android:id="@+id/schedule_time_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dimen45"
+        android:layout_height="@dimen/dimen45"
         android:textSize="@dimen/title_small_txt_size"
         android:textColor="@color/text_color333"
         android:textStyle="bold"
         android:text="1"
         android:gravity="center"
-        android:padding="@dimen/dimen15"/>
+        android:background="@drawable/shape_red_round_point"/>
     <TextView
         android:id="@+id/schedule_price_tv"
         android:layout_width="match_parent"

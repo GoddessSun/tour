@@ -18,8 +18,7 @@
         android:textSize="@dimen/text_normal_size"
         android:textColor="@color/text_color333"
         android:text="定位中..."
-        android:gravity="center_vertical"
-        android:visibility="gone"/>
+        android:gravity="center_vertical"/>
     <com.sun.tour.view.FullGridView
         android:id="@+id/choice_city_header_now_gv"
         android:layout_width="match_parent"
@@ -28,7 +27,8 @@
         android:numColumns="3"
         android:horizontalSpacing="@dimen/dimen10"
         android:verticalSpacing="@dimen/dimen10"
-        android:layout_marginTop="@dimen/dimen10"/>
+        android:layout_marginTop="@dimen/dimen10"
+        android:visibility="gone"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -99,13 +99,21 @@
                 android:gravity="center"
                 android:background="@color/white">
 
+                <com.sun.tour.view.StarView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen40"
+                    app:count="5"
+                    app:touch="false"
+                    app:evaluate_max="100"
+                    app:evaluate="75"/>
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/RatingBarStyle"
                     android:rating="3.5"
                     android:stepSize="0.5"
-                    android:isIndicator="true"/>
+                    android:isIndicator="true"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -371,6 +379,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/hotel_detail_subscribe_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

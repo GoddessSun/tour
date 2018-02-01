@@ -37,7 +37,7 @@ public class SortDialogUtil {
         }
         View view = LayoutInflater.from(context).inflate(R.layout.item_brand_dialog,null);
         int height = context.getResources().getDisplayMetrics().heightPixels;
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,height/3*2);
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,height/2);
         view.setLayoutParams(params);
         RecyclerView rv = view.findViewById(R.id.species_brand_dialog_rv);
         Button btn = view.findViewById(R.id.species_brand_dialog_bottom_btn);
