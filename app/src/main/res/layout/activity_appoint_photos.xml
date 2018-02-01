@@ -7,7 +7,72 @@
     android:orientation="vertical"
     tools:context="com.sun.tour.appointment.AppointPhotosActivity">
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgraound">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/text_photo_first_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textColor="@color/text_color333"
+                    android:text="巴拉巴拉小魔仙"
+                    android:padding="@dimen/dimen16"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView_appoint_photo_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_photo_first_name"
+                    android:paddingTop="@dimen/dimen16"
+                    android:paddingLeft="@dimen/dimen16"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/backgraound"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen16"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/text_photo_second_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_normal_size"
+                    android:textColor="@color/text_color333"
+                    android:text="巴拉巴拉小魔仙"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_photo_second_name"
+                    android:paddingTop="@dimen/dimen16"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgraound"
+                android:text="巴拉巴拉小魔仙"
+                android:textColor="@color/text_color999"
+                android:textSize="@dimen/title_small_txt_size"
+                android:padding="@dimen/dimen16"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -15,5 +80,6 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:gravity="center"
+        android:visibility="invisible"
         android:background="@color/colorPrimary"/>
 </LinearLayout>
