@@ -87,7 +87,7 @@ public class ChatActivity extends BaseActivity implements ChatContract.View {
 
         switch (v.getId()) {
             case R.id.chat_bottom_image_iv:
-                ImageSelectorUtils.openPhotoAndClip(this,0);
+                ImageSelectorUtils.openPhotoAndClip(this,Constant.ACTVIITY_ROUTE+"/imageselector/imagecrop_activity",100);
                 break;
         }
     }

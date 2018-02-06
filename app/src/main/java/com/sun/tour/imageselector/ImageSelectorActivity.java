@@ -31,6 +31,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sun.tour.R;
 import com.sun.tour.imageselector.adapter.FolderAdapter;
 import com.sun.tour.imageselector.adapter.ImageAdapter;
@@ -40,13 +41,14 @@ import com.sun.tour.imageselector.entry.Image;
 import com.sun.tour.imageselector.model.ImageModel;
 import com.sun.tour.imageselector.utils.DateUtils;
 import com.sun.tour.imageselector.utils.ImageSelectorUtils;
+import com.sun.tour.utils.Constant;
 
 import java.util.ArrayList;
 
 /**
  * Created by hanyg on 2018/2/6.
  */
-
+@Route(path = Constant.ACTVIITY_ROUTE+"/imageselector/imageselector_activity")
 public class ImageSelectorActivity extends Activity{
 
     private TextView tvTime;
@@ -85,34 +87,13 @@ public class ImageSelectorActivity extends Activity{
     // 户把先前选过的图片传进来，并把这些图片默认为选中状态。
     private ArrayList<String> mSelectedImages;
 
-    /**
-     * 启动图片选择器
-     *
-     * @param activity
-     * @param requestCode
-     * @param isSingle       是否单选
-     * @param maxSelectCount 图片的最大选择数量，小于等于0时，不限数量，isSingle为false时才有用。
-     * @param selected       接收从外面传进来的已选择的图片列表。当用户原来已经有选择过图片，现在重新打开
-     *                       选择器，允许用户把先前选过的图片传进来，并把这些图片默认为选中状态。
-     */
-    public static void openActivity(Activity activity, int requestCode,
-                                    boolean isSingle, int maxSelectCount, ArrayList<String> selected) {
-        Intent intent = new Intent(activity, ImageSelectorActivity.class);
-        intent.putExtra(Constants.MAX_SELECT_COUNT, maxSelectCount);
-        intent.putExtra(Constants.IS_SINGLE, isSingle);
-        intent.putStringArrayListExtra(Constants.SELECTED, selected);
-        activity.startActivityForResult(intent, requestCode);
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_select);
 
-        Intent intent = getIntent();
-        mMaxCount = intent.getIntExtra(Constants.MAX_SELECT_COUNT, 0);
-        isSingle = intent.getBooleanExtra(Constants.IS_SINGLE, false);
-        mSelectedImages = intent.getStringArrayListExtra(Constants.SELECTED);
+        getBundleData();
 
         setStatusBarColor();
         initView();
@@ -123,6 +104,14 @@ public class ImageSelectorActivity extends Activity{
         setSelectImageCount(0);
     }
 
+    private void getBundleData(){
+
+        Bundle bundle = getIntent().getExtras();
+
+        mMaxCount = bundle.getInt(Constants.MAX_SELECT_COUNT, 0);
+        isSingle = bundle.getBoolean(Constants.IS_SINGLE, false);
+        mSelectedImages = bundle.getStringArrayList(Constants.SELECTED);
+    }
     /**
      * 修改状态栏颜色
      */
@@ -404,6 +393,16 @@ public class ImageSelectorActivity extends Activity{
 
     private void toPreviewActivity(ArrayList<Image> images, int position) {
         if (images != null && !images.isEmpty()) {
+
+//            Bundle bundle = new Bundle();
+//            bundle.putInt(Constants.MAX_SELECT_COUNT,mMaxCount);
+//            bundle.putBoolean(Constants.IS_SINGLE,isSingle);
+//            bundle.putInt(Constants.POSITION,position);
+//            bundle.putParcelableArrayList("tempImages",images);
+//            bundle.putParcelableArrayList("tempSelectImages",mAdapter.getSelectImages());
+//            ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/imageselector/preview_activity")
+//                    .with(bundle)
+//                    .navigation(this,Constants.RESULT_CODE);
             PreviewActivity.openActivity(this, images,
                     mAdapter.getSelectImages(), isSingle, mMaxCount, position);
         }

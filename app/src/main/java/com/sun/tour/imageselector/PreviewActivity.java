@@ -23,10 +23,12 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sun.tour.R;
 import com.sun.tour.imageselector.adapter.ImagePagerAdapter;
 import com.sun.tour.imageselector.constant.Constants;
 import com.sun.tour.imageselector.entry.Image;
+import com.sun.tour.utils.Constant;
 import com.sun.tour.view.ImageSelectorViewPager;
 
 import java.util.ArrayList;
@@ -36,7 +38,7 @@ import static android.animation.ObjectAnimator.ofFloat;
 /**
  * Created by hanyg on 2018/2/6.
  */
-
+@Route(path = Constant.ACTVIITY_ROUTE+"/imageselector/preview_activity")
 public class PreviewActivity extends AppCompatActivity {
 
     private ImageSelectorViewPager vpImage;
@@ -59,6 +61,7 @@ public class PreviewActivity extends AppCompatActivity {
     private boolean isConfirm = false;
     private boolean isSingle;
     private int mMaxCount;
+    private int position;
 
     private BitmapDrawable mSelectDrawable;
     private BitmapDrawable mUnSelectDrawable;
@@ -81,6 +84,7 @@ public class PreviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_preview);
 
         setStatusBarVisible(true);
+//        getBundleData();
         mImages = tempImages;
         tempImages = null;
         mSelectImages = tempSelectImages;
@@ -106,7 +110,16 @@ public class PreviewActivity extends AppCompatActivity {
 
         tvIndicator.setText(1 + "/" + mImages.size());
         changeSelect(mImages.get(0));
-        vpImage.setCurrentItem(intent.getIntExtra(Constants.POSITION, 0));
+        vpImage.setCurrentItem(intent.getIntExtra(Constants.POSITION,0));
+    }
+    private void getBundleData() {
+        Bundle bundle = getIntent().getExtras();
+        mImages = bundle.getParcelableArrayList("tempImages");
+        mSelectImages = bundle.getParcelableArrayList("tempSelectImages");
+        mMaxCount = bundle.getInt(Constants.MAX_SELECT_COUNT,0);
+        isSingle = bundle.getBoolean(Constants.IS_SINGLE,false);
+        position = bundle.getInt(Constants.POSITION,0);
+
     }
 
     private void initView() {

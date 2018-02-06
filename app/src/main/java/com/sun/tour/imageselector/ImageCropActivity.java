@@ -12,10 +12,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sun.tour.R;
 import com.sun.tour.imageselector.utils.ImageSelectorUtils;
 import com.sun.tour.imageselector.utils.ImageUtil;
 import com.sun.tour.imageselector.utils.StringUtils;
+import com.sun.tour.utils.Constant;
 import com.sun.tour.view.ClipImageView;
 
 import java.io.File;
@@ -24,7 +26,7 @@ import java.util.ArrayList;
 /**
  * Created by hanyg on 2018/2/6.
  */
-
+@Route(path = Constant.ACTVIITY_ROUTE+"/imageselector/imagecrop_activity")
 public class ImageCropActivity extends Activity{
     private FrameLayout btnConfirm;
     private FrameLayout btnBack;
@@ -37,10 +39,10 @@ public class ImageCropActivity extends Activity{
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_clip_image);
 
-        mRequestCode = getIntent().getIntExtra("requestCode", 0);
-
+//        mRequestCode = getIntent().getIntExtra("requestCode", 0);
+        mRequestCode = getIntent().getExtras().getInt("requestCode",0);
         setStatusBarColor();
-        ImageSelectorUtils.openPhoto(this, mRequestCode, true, 0);
+        ImageSelectorUtils.openPhoto(this,Constant.ACTVIITY_ROUTE+"/imageselector/imageselector_activity", mRequestCode, true, 0);
         initView();
     }
 

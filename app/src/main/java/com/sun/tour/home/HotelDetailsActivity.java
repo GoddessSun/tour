@@ -6,19 +6,18 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
-import com.sun.tour.imageselector.utils.ImageSelectorUtils;
+import com.sun.tour.utils.Constant;
 
 import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.bingoogolapple.bgabanner.BGABanner;
-
-import static com.sun.tour.SplashActivity.REQUEST_CODE;
 
 @Route(path = "/tour/home/hotel_details_activity")
 public class HotelDetailsActivity extends BaseActivity {
@@ -63,11 +62,8 @@ public class HotelDetailsActivity extends BaseActivity {
 
         switch (view.getId()) {
             case R.id.hotel_detail_subscribe_btn:
-//                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/home/subscribe/subscribe_activity")
-//                        .navigation(this);
-//                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/image/preview/preview_activity")
-//                        .navigation();
-                ImageSelectorUtils.openPhoto(this, REQUEST_CODE, false, 9, null); // 把已选的传入。
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/home/subscribe/subscribe_activity")
+                        .navigation(this);
                 break;
         }
     }

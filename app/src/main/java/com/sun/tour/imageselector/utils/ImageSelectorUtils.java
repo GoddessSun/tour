@@ -1,9 +1,10 @@
 package com.sun.tour.imageselector.utils;
 
 import android.app.Activity;
+import android.os.Bundle;
 
-import com.sun.tour.imageselector.ImageCropActivity;
-import com.sun.tour.imageselector.ImageSelectorActivity;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.sun.tour.imageselector.constant.Constants;
 
 import java.util.ArrayList;
 
@@ -21,8 +22,8 @@ public class ImageSelectorUtils {
      * @param activity
      * @param requestCode
      */
-    public static void openPhoto(Activity activity, int requestCode) {
-        openPhoto(activity, requestCode, false, 0);
+    public static void openPhoto(Activity activity,String activitypath, int requestCode) {
+        openPhoto(activity,activitypath, requestCode, false, 0);
     }
 
     /**
@@ -33,8 +34,8 @@ public class ImageSelectorUtils {
      * @param selected    接收从外面传进来的已选择的图片列表。当用户原来已经有选择过图片，现在重新打开
      *                    选择器，允许用户把先前选过的图片传进来，并把这些图片默认为选中状态。
      */
-    public static void openPhoto(Activity activity, int requestCode, ArrayList<String> selected) {
-        openPhoto(activity, requestCode, false, 0, selected);
+    public static void openPhoto(Activity activity,String activitypath, int requestCode, ArrayList<String> selected) {
+        openPhoto(activity,activitypath, requestCode, false, 0, selected);
     }
 
     /**
@@ -45,9 +46,9 @@ public class ImageSelectorUtils {
      * @param isSingle       是否单选
      * @param maxSelectCount 图片的最大选择数量，小于等于0时，不限数量，isSingle为false时才有用。
      */
-    public static void openPhoto(Activity activity, int requestCode,
+    public static void openPhoto(Activity activity,String activitypath, int requestCode,
                                  boolean isSingle, int maxSelectCount) {
-        openPhoto(activity, requestCode, isSingle, maxSelectCount, null);
+        openPhoto(activity,activitypath, requestCode, isSingle, maxSelectCount, null);
     }
 
     /**
@@ -60,9 +61,15 @@ public class ImageSelectorUtils {
      * @param selected       接收从外面传进来的已选择的图片列表。当用户原来已经有选择过图片，现在重新打开
      *                       选择器，允许用户把先前选过的图片传进来，并把这些图片默认为选中状态。
      */
-    public static void openPhoto(Activity activity, int requestCode,
+    public static void openPhoto(Activity activity,String activitypath, int requestCode,
                                  boolean isSingle, int maxSelectCount, ArrayList<String> selected) {
-        ImageSelectorActivity.openActivity(activity, requestCode, isSingle, maxSelectCount, selected);
+        Bundle bundle = new Bundle();
+        bundle.putInt(Constants.MAX_SELECT_COUNT,maxSelectCount);
+        bundle.putBoolean(Constants.IS_SINGLE,isSingle);
+        bundle.putStringArrayList(Constants.SELECTED,selected);
+        ARouter.getInstance().build(activitypath)
+                .with(bundle)
+                .navigation(activity,requestCode);
     }
 
     /**
@@ -71,7 +78,12 @@ public class ImageSelectorUtils {
      * @param activity
      * @param requestCode
      */
-    public static void openPhotoAndClip(Activity activity, int requestCode) {
-        ImageCropActivity.openActivity(activity, requestCode);
+    public static void openPhotoAndClip(Activity activity,String activitypath, int requestCode) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("requestCode",requestCode);
+        ARouter.getInstance().build(activitypath)
+                .with(bundle)
+                .navigation(activity,requestCode);
     }
+
 }
