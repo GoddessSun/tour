@@ -4,14 +4,20 @@ import android.content.Context;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
 
 import com.sun.tour.R;
+import com.sun.tour.view.WDatePicket;
+import com.sun.tour.view.WTimePicket;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -44,6 +50,56 @@ public class SortDialogUtil {
         rv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false));
         SortAdapter sortAdapter = new SortAdapter(context,data);
         rv.setAdapter(sortAdapter);
+        BottomSheetDialog dialog = new BottomSheetDialog(context);
+        dialog.setContentView(view);
+        dialog.show();
+    }
+
+    public static void showDate_TimeDialog(Context context){
+        View view = LayoutInflater.from(context).inflate(R.layout.item_search_more_choice_time,null);
+        WDatePicket dp = view.findViewById(R.id.search_more_choice_date_dp);
+        WTimePicket tp = view.findViewById(R.id.search_more_choice_time_tp);
+
+        tp.setIs24HourView(true);
+        Calendar calendar = Calendar.getInstance();
+        dp.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                Log.e("date","----year-----"+year+"---monthOfYear---"+monthOfYear+"-----dayOfMonth----"+dayOfMonth);
+            }
+        });
+
+        tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+
+                Log.e("time","----hourOfDay-----"+hourOfDay+"---minute---"+minute);
+            }
+        });
+
+        final BottomSheetDialog dialog = new BottomSheetDialog(context);
+        dialog.setContentView(view);
+        view.findViewById(R.id.search_more_choice_dt__cancel_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        view.findViewById(R.id.search_more_choice_dt__finish_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    public static void showComputeCostDialog(Context context) {
+
+        View view = LayoutInflater.from(context).inflate(R.layout.item_compute_cost_dialog,null);
+
         BottomSheetDialog dialog = new BottomSheetDialog(context);
         dialog.setContentView(view);
         dialog.show();

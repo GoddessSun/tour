@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white">
 
@@ -10,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/message_icon_iv"
             android:layout_width="@dimen/dimen50"
             android:layout_height="@dimen/dimen50"
-            android:background="@color/text_color666"
-            android:layout_margin="@dimen/dimen10"/>
+            android:src="@drawable/ic_hotel_background"
+            android:layout_margin="@dimen/dimen10"
+            app:riv_corner_radius="@dimen/dimen4"
+            android:scaleType="centerCrop"/>
         <TextView
             android:id="@+id/message_name_tv"
             android:layout_width="wrap_content"

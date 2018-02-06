@@ -91,8 +91,6 @@
         <activity
             android:name=".message.chat.ChatActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".image.ChoiceImageActivity" />
-        <activity android:name=".image.preview.PreviewActivity" />
         <activity android:name=".appointment.evaluate.EvaluateActivity" />
         <activity android:name=".store.store_edit.StoreEditActivity" />
         <activity android:name=".store.classify.SpeciesActivity" />
@@ -117,7 +115,27 @@
             android:value="5c322104b755934494c6b2d8920ba2c4" />
 
         <activity android:name=".home.near.NearActivity" />
-        <activity android:name=".home.subscribe.SubscribeActivity"></activity>
+        <activity android:name=".home.subscribe.SubscribeActivity" />
+        <activity android:name=".persion.authentication.AuthenticationActivity" />
+        <activity android:name=".persion.authentication.identity_person.IdentityPersonActivity" />
+        <activity android:name=".persion.authentication.phone.PhoneAuthenticationActivity" />
+        <activity android:name=".persion.authentication.assure_authentication.AssureAuthenticationActivity" />
+        <activity android:name=".persion.authentication.assure.AssureActivity" />
+
+        //图片选择Activity
+        <activity
+            android:name=".imageselector.ImageSelectorActivity"
+            android:screenOrientation="portrait"/>
+
+        //图片预览Activity
+        <activity
+            android:name=".imageselector.PreviewActivity"
+            android:screenOrientation="portrait"/>
+
+        //图片剪切Activity
+        <activity
+            android:name=".imageselector.ImageCropActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -38,4 +38,6 @@
     <color name="grayfa">#fafafa</color>
     <color name="grayec">#ececec</color>
     <color name="yellowfe">#febe14</color>
+    <color name="black">#000000</color>
+    <color name="title_color2c">#2c2c2c</color>
 </resources>

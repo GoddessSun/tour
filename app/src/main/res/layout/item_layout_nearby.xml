@@ -7,8 +7,10 @@
     android:paddingRight="8dp">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="@dimen/dimen160"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dimen6"
+        android:background="@drawable/shape_white">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/roundimage_item_nearby"
@@ -18,7 +20,7 @@
             android:scaleType="centerCrop"
             app:riv_corner_radius_top_left="4dp"
             app:riv_corner_radius_top_right="4dp"
-            app:riv_mutate_background="true" />
+            app:riv_mutate_background="true"/>
 
         <LinearLayout
             android:layout_width="@dimen/dimen160"
@@ -55,19 +57,28 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/roundimage_item_nearby"
             android:lineSpacingExtra="4dp"
-            android:padding="6dp"
+            android:layout_margin="6dp"
             android:text="锥子脸大长腿美女图如云锥子脸大长腿美女图如云"
             android:textColor="@color/text_color999"
             android:textSize="10sp" />
-
+        <View
+            android:id="@+id/home_item_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_line_height"
+            android:background="@color/grayf2"
+            android:layout_marginLeft="@dimen/dimen6"
+            android:layout_marginRight="@dimen/dimen6"
+            android:layout_below="@id/text_item_nearby_des"
+            android:layout_marginBottom="@dimen/dimen6"/>
         <LinearLayout
             android:id="@+id/linear_hour"
             android:layout_width="@dimen/dimen160"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_item_nearby_des"
+            android:layout_below="@id/home_item_line"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="6dp">
+            android:layout_marginLeft="@dimen/dimen6"
+            android:layout_marginRight="@dimen/dimen6">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +115,8 @@
             android:layout_marginTop="4dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="6dp">
+            android:layout_marginLeft="@dimen/dimen6"
+            android:layout_marginRight="@dimen/dimen6">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,4 +146,6 @@
 
         </LinearLayout>
     </RelativeLayout>
+
+
 </RelativeLayout>

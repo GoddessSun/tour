@@ -64,7 +64,8 @@
                 android:textColor="@color/white"
                 android:text="天"
                 android:background="@drawable/shape_blue_background"
-                android:padding="@dimen/dimen3"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp"
                 android:layout_alignBottom="@id/near_hotal_icon_iv"
                 android:layout_alignLeft="@id/near_hotal_name_tv"/>
             <TextView
@@ -103,8 +104,9 @@
                 android:textSize="@dimen/txt_size10"
                 android:textColor="@color/white"
                 android:text="时"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp"
                 android:background="@drawable/shape_blue_background"
-                android:padding="@dimen/dimen3"
                 android:layout_alignBottom="@id/near_hotal_icon_iv"
                 android:layout_alignLeft="@id/near_hotal_name_tv"/>
             <TextView

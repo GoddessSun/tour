@@ -7,8 +7,7 @@
     <com.sun.tour.view.TRelativeLayout
         android:id="@+id/choice_image_check_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/text_color333">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/choice_image_list_iv"
             android:layout_width="match_parent"

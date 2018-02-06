@@ -96,9 +96,10 @@ public class StoreEditActivity extends BaseActivity {
                 toActivity(Constant.ACTVIITY_ROUTE+"/store/text/text_activity",0);
                 break;
             case R.id.store_edit_identity_iv:
-                toActivity(Constant.ACTVIITY_ROUTE+"/schedule/schedule_activity",0);
+                toActivity(Constant.ACTVIITY_ROUTE + "/persion/authentication/authentication_activity",0);
                 break;
             case R.id.store_edit_matter_tv:
+                toActivity(Constant.ACTVIITY_ROUTE+"/schedule/schedule_activity",0);
                 break;
             case R.id.store_edit_limit_tv:
                 break;

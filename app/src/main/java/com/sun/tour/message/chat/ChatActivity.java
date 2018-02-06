@@ -12,7 +12,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
-import com.sun.tour.image.ChoiceImageUtil;
+import com.sun.tour.imageselector.utils.ImageSelectorUtils;
 import com.sun.tour.utils.Constant;
 
 import java.util.ArrayList;
@@ -87,10 +87,7 @@ public class ChatActivity extends BaseActivity implements ChatContract.View {
 
         switch (v.getId()) {
             case R.id.chat_bottom_image_iv:
-//                ChoiceImageUtil.tophoto(this,null,9,2);
-                ChoiceImageUtil.tophoto(this,true,11);
-//                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/appointment/evaluate/evaluate_activity")
-//                        .navigation(this);
+                ImageSelectorUtils.openPhotoAndClip(this,0);
                 break;
         }
     }

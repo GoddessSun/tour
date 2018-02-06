@@ -31,6 +31,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mRightImageView;
     private TextView mRightTextView;
     private boolean show;
+    private int color = -1;
+
     /**
      * 是否使用自己的布局，即不适用默认的toolbar以及默认的toolbar+content布局
      *
@@ -55,13 +57,17 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void setContentView(int layoutResID) {
 
+        int color = Color.parseColor("#ffffff");
+        if (this.color != -1){
+            color = this.color;
+        }
         if (useOwnContentView()){//使用自定义布局
             super.setContentView(layoutResID);
             if (!show){
-                SystemStatueBarUtil.setStatusBarLightMode(this, Color.parseColor("#ffffff"));
+                SystemStatueBarUtil.setStatusBarLightMode(this, color);
             }
         }else {//使用默认布局
-            SystemStatueBarUtil.setStatusBarLightMode(this, Color.parseColor("#ffffff"));
+            SystemStatueBarUtil.setStatusBarLightMode(this, color);
             LayoutInflater inflater = LayoutInflater.from(this);
             ViewGroup mRootView = (ViewGroup) inflater.inflate(R.layout.activity_base, null);
             LayoutInflater.from(this).inflate(layoutResID,mRootView);
@@ -76,6 +82,12 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         mUnbinder = ButterKnife.bind(this);
+    }
+
+    public void setContentView(int layoutResID,int color){
+
+        this.color = color;
+        setContentView(layoutResID);
     }
 
     protected void setContentView(int layoutResID,boolean show){

@@ -5,11 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.sun.tour.R;
 import com.sun.tour.utils.Constant;
 
@@ -59,7 +59,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     class MessageViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.message_icon_iv)
-        ImageView ivIcon;
+        RoundedImageView ivIcon;
         @BindView(R.id.message_name_tv)
         TextView tvName;
         @BindView(R.id.message_time_tv)

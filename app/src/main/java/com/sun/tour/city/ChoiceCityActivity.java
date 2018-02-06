@@ -42,6 +42,11 @@ public class ChoiceCityActivity extends BaseActivity {
         init();
     }
 
+    @Override
+    public boolean useOwnContentView() {
+        return true;
+    }
+
     private void init() {
         setTitle("选择位置");
         fragment = new ChoiceCityFragment();
