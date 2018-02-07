@@ -1,41 +1,43 @@
-package com.sun.tour.persion.authentication.identity_person;
+package com.sun.tour.message.notify;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
 import com.sun.tour.utils.Constant;
-import com.sun.tour.view.FullRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 
-@Route(path = Constant.ACTVIITY_ROUTE + "/persion/authentication/identity_person_activity")
-public class IdentityPersonActivity extends BaseActivity {
+/**
+ * 系统通知
+ */
+@Route(path = Constant.ACTVIITY_ROUTE + "/message/notify/systemnotify_activity")
+public class SystemNotifyActivity extends BaseActivity {
 
-    @BindView(R.id.identity_person_rv)
-    FullRecyclerView rv;
+    @BindView(R.id.system_notify_rv)
+    RecyclerView rv;
     private List<String> data = new ArrayList<>();
-    private IdentityPersonAdapter mAdapter;
+    private SystemNotifyAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_identity_person);
+        setContentView(R.layout.activity_system_notify);
         init();
     }
 
     private void init() {
-
-        setTopTitle("个人身份");
+        setTopTitle("系统消息");
         rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        mAdapter = new IdentityPersonAdapter(this,data);
+        mAdapter = new SystemNotifyAdapter(this,data);
         rv.setAdapter(mAdapter);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             data.add("测试");
         }
         mAdapter.notifyDataSetChanged();

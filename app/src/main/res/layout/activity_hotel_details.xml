@@ -369,6 +369,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/hotel_detail_request_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

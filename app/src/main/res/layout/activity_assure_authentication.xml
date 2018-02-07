@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayf2"
-    tools:context="com.sun.tour.persion.authentication.assure_authentication.AssureAuthenticationActivity">
+    tools:context="com.sun.tour.real.assure_authentication.AssureAuthenticationActivity">
     <LinearLayout
         android:id="@+id/assure_authentication_top_layout"
         android:layout_width="match_parent"

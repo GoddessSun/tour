@@ -9,7 +9,6 @@ import com.sun.tour.base.BaseActivity;
 import com.sun.tour.store.dialog.SortDialogUtil;
 import com.sun.tour.utils.Constant;
 
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -22,7 +21,6 @@ public class SubscribeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscribe);
-        ButterKnife.bind(this);
         init();
     }
 

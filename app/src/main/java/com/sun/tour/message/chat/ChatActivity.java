@@ -46,10 +46,12 @@ public class ChatActivity extends BaseActivity implements ChatContract.View {
 
     @Override
     public boolean useOwnContentView() {
-        return true;
+        return false;
     }
 
     private void init() {
+        setTopTitle("皮皮虾");
+        setRightText("清空");
         ChatPresenter chatPresenter = new ChatPresenter();
         chatPresenter.bindView(this);
 
@@ -80,6 +82,12 @@ public class ChatActivity extends BaseActivity implements ChatContract.View {
     public void bindPresenter(ChatContract.Presenter presenter) {
 
         this.presenter = presenter;
+    }
+
+    @Override
+    protected void onRightMenuClick() {
+        super.onRightMenuClick();
+
     }
 
     @OnClick({R.id.chat_bottom_image_iv})

@@ -2,24 +2,20 @@ package com.sun.tour.focus;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 import com.sun.tour.focus.adapter.FocusAdapter;
 import com.sun.tour.focus.callback.OnItemCancleClick;
+import com.sun.tour.store.dialog.SortDialogUtil;
 import com.sun.tour.view.RxToast;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 
 public class FocusFragment extends BaseFragment implements OnItemCancleClick,OnRecyclerViewItemClick{
@@ -81,7 +77,7 @@ public class FocusFragment extends BaseFragment implements OnItemCancleClick,OnR
 
     @Override
     public void onCancleClick(int position) {
-        RxToast.info("取消关注:"+position);
+        SortDialogUtil.showCancelDialog(getActivity(),null,"是否取消关注?",null);
     }
 
     @Override

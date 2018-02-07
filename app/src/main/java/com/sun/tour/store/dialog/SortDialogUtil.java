@@ -4,12 +4,15 @@ import android.content.Context;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.sun.tour.R;
@@ -103,5 +106,42 @@ public class SortDialogUtil {
         BottomSheetDialog dialog = new BottomSheetDialog(context);
         dialog.setContentView(view);
         dialog.show();
+    }
+
+    public static void showCancelDialog(Context context,String title,String message,OnCancelCallBack onCancelCallBack){
+
+        View view = LayoutInflater.from(context).inflate(R.layout.item_dialog_cancel,null);
+        LinearLayout titleLayout = view.findViewById(R.id.dialog_cancel_title_layout);
+        TextView tvTitle = view.findViewById(R.id.dialog_cancel_title_tv);
+        TextView tvMessage = view.findViewById(R.id.dialog_cancel_message_tv);
+        Button btnCancel = view.findViewById(R.id.dialog_cancel_btn);
+        Button btnFinish = view.findViewById(R.id.dialog_cancel_finish_btn);
+        if (!TextUtils.isEmpty(title)){
+            tvTitle.setText(title);
+        }
+        tvMessage.setText(message);
+
+        final BottomSheetDialog dialog = new BottomSheetDialog(context);
+        dialog.setContentView(view);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
+    }
+
+    interface OnCancelCallBack{
+
+        void dialogCancel();
+        void dialogFinish();
     }
 }

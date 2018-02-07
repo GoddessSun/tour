@@ -6,13 +6,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseFragment;
 import com.sun.tour.store.adapter.StoreAdapter;
-import com.sun.tour.utils.Constant;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -28,8 +29,7 @@ public class StoreFragment extends BaseFragment {
     private String mParam1;
     private String mParam2;
     private StoreAdapter mStoreAdapter;
-
-
+    private List<String> data = null;
     public StoreFragment() {
         // Required empty public constructor
     }
@@ -64,14 +64,20 @@ public class StoreFragment extends BaseFragment {
 
     @Override
     public void initViews(View rootView) {
+        data = new ArrayList<>();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getHoldingActivity());
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        mStoreAdapter = new StoreAdapter();
+        mStoreAdapter = new StoreAdapter(getActivity(),data);
         mRecyclerView.setAdapter(mStoreAdapter);
+        for (int i = 0; i < 3; i++) {
+            data.add("测试");
+        }
+        mStoreAdapter.notifyDataSetChanged();
+
         mStoreAdapter.setOnRecyclerViewItemClick(new OnRecyclerViewItemClick() {
             @Override
             public void onItemRecyclerViewClick(int position) {
-                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/store/store_edit/storeedit_acitivity").navigation(getActivity());
+
             }
         });
     }

@@ -3,11 +3,13 @@ package com.sun.tour.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -162,13 +164,13 @@ public class SortView extends View {
                 Bitmap bt = null;
                 switch (sort){
                     case UP:
-                        bt = BitmapFactory.decodeResource(getResources(),R.drawable.vector_sort_up);
+                        bt = getBitmapFromVectorDrawable(R.drawable.vector_sort_up);
                         break;
                     case DOWN:
-                        bt = BitmapFactory.decodeResource(getResources(),R.drawable.vector_sort_down);
+                        bt = getBitmapFromVectorDrawable(R.drawable.vector_sort_down);
                         break;
                     default:
-                        bt = BitmapFactory.decodeResource(getResources(),R.drawable.vector_sort_default);
+                        bt = getBitmapFromVectorDrawable(R.drawable.vector_sort_default);
                         break;
                 }
                 w += magin+bt.getWidth();
@@ -176,11 +178,26 @@ public class SortView extends View {
 
             }
             if (showBottomLine){
-
+                paint.setStrokeWidth(5);
                 paint.setColor(lineColor);
                 canvas.drawLine(width/2-textRect.width()/2,height - 1,width/2-textRect.width()/2+w,height - 1,paint);
             }
         }
+    }
+
+    public Bitmap getBitmapFromVectorDrawable(int drawableId) {
+        Drawable drawable = getResources().getDrawable(drawableId);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            drawable = (DrawableCompat.wrap(drawable)).mutate();
+        }
+
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
     }
 
 }

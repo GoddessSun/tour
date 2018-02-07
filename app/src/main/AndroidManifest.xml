@@ -116,26 +116,25 @@
 
         <activity android:name=".home.near.NearActivity" />
         <activity android:name=".home.subscribe.SubscribeActivity" />
-        <activity android:name=".persion.authentication.AuthenticationActivity" />
-        <activity android:name=".persion.authentication.identity_person.IdentityPersonActivity" />
-        <activity android:name=".persion.authentication.phone.PhoneAuthenticationActivity" />
-        <activity android:name=".persion.authentication.assure_authentication.AssureAuthenticationActivity" />
-        <activity android:name=".persion.authentication.assure.AssureActivity" />
-
+        <activity android:name=".real.identity_person.IdentityPersonActivity" />
+        <activity android:name=".real.phone.PhoneAuthenticationActivity" />
+        <activity android:name=".real.assure_authentication.AssureAuthenticationActivity" />
+        <activity android:name=".real.assure.AssureActivity" />
         //图片选择Activity
         <activity
             android:name=".imageselector.ImageSelectorActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         //图片预览Activity
         <activity
             android:name=".imageselector.PreviewActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         //图片剪切Activity
         <activity
             android:name=".imageselector.ImageCropActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".home.map.MapActivity" />
+        <activity android:name=".home.img.ImagePreviewActivity" />
+        <activity android:name=".message.notify.SystemNotifyActivity"></activity>
     </application>
 
 </manifest>

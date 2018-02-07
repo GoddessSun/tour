@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen15"
+        android:layout_marginTop="@dimen/dimen5"
+        android:layout_marginBottom="@dimen/dimen5"
+        android:layout_marginRight="@dimen/dimen15">
+        <ImageView
+            android:id="@+id/system_notify_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_bg_btn_round_blue_normal"
+            android:src="@drawable/ic_system_notify"
+            android:padding="@dimen/dimen4"/>
+        <TextView
+            android:id="@+id/system_notify_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_txt_size"
+            android:textColor="@color/text_color333"
+            android:text="系统通知"
+            android:layout_toRightOf="@id/system_notify_iv"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginTop="@dimen/dimen3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen10"
+            android:textColor="@color/text_color999"
+            android:text="05-23 10:23"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/system_notify_title_tv"
+            android:layout_marginTop="@dimen/dimen3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_size12"
+            android:textColor="@color/text_color666"
+            android:text="系统提示: 国内功能很强大且图标内容很丰富的矢量图标库,提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造,设计和前端开发的便捷工具"
+            android:ellipsize="end"
+            android:layout_alignLeft="@id/system_notify_title_tv"
+            android:layout_below="@id/system_notify_iv"
+            android:lineSpacingExtra="@dimen/dimen4"
+            android:maxLines="2"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_line_height"
+        android:background="@color/grayf2"
+        android:layout_marginTop="@dimen/dimen5"/>
+</LinearLayout>

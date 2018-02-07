@@ -39,8 +39,9 @@
                 android:id="@+id/chat_list_left_icon_iv"
                 android:layout_width="@dimen/dimen50"
                 android:layout_height="@dimen/dimen50"
-                android:background="@color/text_color666"
-                app:riv_corner_radius="@dimen/dimen5"/>
+                android:src="@drawable/ic_hotel_background"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="@dimen/dimen4"/>
             <com.sun.tour.view.ChatLinearLayout
                 android:id="@+id/chat_list_left_message_layout"
                 android:layout_width="wrap_content"
@@ -73,12 +74,14 @@
             android:layout_marginLeft="@dimen/dimen60"
             android:layout_alignParentLeft="true"
             android:visibility="gone">
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/chat_list_right_icon_iv"
                 android:layout_width="@dimen/dimen50"
                 android:layout_height="@dimen/dimen50"
-                android:background="@color/text_color666"
-                android:layout_alignParentRight="true"/>
+                android:src="@drawable/ic_hotel_background"
+                android:layout_alignParentRight="true"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="@dimen/dimen4"/>
             <com.sun.tour.view.ChatLinearLayout
                 android:id="@+id/chat_list_right_message_layout"
                 android:layout_width="wrap_content"

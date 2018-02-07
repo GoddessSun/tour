@@ -1,4 +1,4 @@
-package com.sun.tour.persion.authentication.identity_person;
+package com.sun.tour.real.identity_person;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

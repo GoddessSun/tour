@@ -20,7 +20,7 @@ import com.sun.tour.view.MyProgressDialog;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class BaseActivity extends AppCompatActivity implements View.OnClickListener{
+public class BaseActivity extends AppCompatActivity{
 
     TextView mTitleTextView;
     FrameLayout mFrameLayoutLeft; //左侧返回按钮，默认状态显示
@@ -73,11 +73,22 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             LayoutInflater.from(this).inflate(layoutResID,mRootView);
             mTitleTextView = mRootView.findViewById(R.id.text_toolbar_title);
             mFrameLayoutLeft = mRootView.findViewById(R.id.framelayout_left_base);
-            mFrameLayoutLeft.setOnClickListener(this);
+            mFrameLayoutLeft.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
             mFrameLayoutRight = mRootView.findViewById(R.id.framelayout_right_base);
             mRightImageView = mRootView.findViewById(R.id.image_base_right);
             mRightTextView = mRootView.findViewById(R.id.text_base_small_title);
-            mFrameLayoutRight.setOnClickListener(this);
+            mFrameLayoutRight.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onRightMenuClick();
+                    onRightMenuClick(mRightTextView);
+                }
+            });
             super.setContentView(mRootView);
         }
 
@@ -150,12 +161,12 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * 右侧如果有点击事件 重写该方法
      */
-    private void onRightMenuClick() {
+    protected void onRightMenuClick() {
     }
     /**
      * 右侧如果有点击事件 重写该方法
      */
-    private void onRightMenuClick(TextView rightTextView) {
+    protected void onRightMenuClick(TextView rightTextView) {
     }
 
     /**
@@ -229,19 +240,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.framelayout_left_base://左侧返回按钮点击事件
-                onBackPressed();
-                break;
-
-            case R.id.framelayout_right_base://右侧图标或文字按钮
-                onRightMenuClick();
-                onRightMenuClick(mRightTextView);
-                break;
-        }
-    }
 
 
 

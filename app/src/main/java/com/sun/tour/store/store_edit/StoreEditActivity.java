@@ -58,7 +58,6 @@ public class StoreEditActivity extends BaseActivity {
 
     private void init() {
 
-
     }
 
     @Override
@@ -96,7 +95,7 @@ public class StoreEditActivity extends BaseActivity {
                 toActivity(Constant.ACTVIITY_ROUTE+"/store/text/text_activity",0);
                 break;
             case R.id.store_edit_identity_iv:
-                toActivity(Constant.ACTVIITY_ROUTE + "/persion/authentication/authentication_activity",0);
+                toActivity(Constant.ACTVIITY_ROUTE + "/real/identity_person_activity",0);
                 break;
             case R.id.store_edit_matter_tv:
                 toActivity(Constant.ACTVIITY_ROUTE+"/schedule/schedule_activity",0);
@@ -112,7 +111,12 @@ public class StoreEditActivity extends BaseActivity {
         }
     }
 
-    private void toActivity(String path,int requestCode){
+    @Override
+    protected void onRightMenuClick() {
+        super.onRightMenuClick();
+    }
+
+    private void toActivity(String path, int requestCode){
         ARouter.getInstance().build(path).navigation(this,requestCode);
     }
 }

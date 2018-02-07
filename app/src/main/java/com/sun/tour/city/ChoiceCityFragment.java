@@ -60,9 +60,9 @@ public class ChoiceCityFragment extends BaseFragment {
         init();
     }
 
-    @OnClick({R.id.choice_city_cancel})
+    @OnClick({R.id.choice_city_cancel_iv})
     public void onClick(View v){
-
+        getActivity().finish();
     }
 
     private void init() {

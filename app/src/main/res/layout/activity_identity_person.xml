@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayf2"
-    tools:context=".persion.authentication.identity_person.IdentityPersonActivity">
+    tools:context=".real.identity_person.IdentityPersonActivity">
     
     <Button
         android:id="@+id/identity_person_btn"

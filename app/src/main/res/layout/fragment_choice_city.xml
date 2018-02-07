@@ -13,7 +13,7 @@
         android:paddingLeft="@dimen/dimen10"
         android:paddingRight="@dimen/dimen10">
         <ImageView
-            android:id="@+id/choice_city_cancel"
+            android:id="@+id/choice_city_cancel_iv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/ic_search_cancel"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="@dimen/dimen10"
-            android:layout_toLeftOf="@id/choice_city_cancel"
+            android:layout_toLeftOf="@id/choice_city_cancel_iv"
             android:layout_marginTop="@dimen/dimen10"
             android:layout_marginBottom="@dimen/dimen10"
             android:paddingLeft="@dimen/dimen10"
@@ -35,7 +35,8 @@
             android:drawableLeft="@drawable/ic_search"
             android:drawablePadding="@dimen/dimen10"
             android:textSize="@dimen/title_small_txt_size"
-            android:hint="全国城市/区域/位置"/>
+            android:hint="全国城市/区域/位置"
+            android:gravity="center_vertical"/>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"

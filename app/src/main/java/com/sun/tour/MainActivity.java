@@ -1,8 +1,5 @@
 package com.sun.tour;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -13,7 +10,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -33,11 +29,8 @@ import com.sun.tour.message.MessageFragment;
 import com.sun.tour.store.StoreFragment;
 import com.sun.tour.utils.Constant;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -144,6 +137,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener
                 ARouter.getInstance().build("/tour/real/real_activity").navigation();
                 break;
             case R.id.text_notiycation://系统通知
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/message/notify/systemnotify_activity").navigation();
                 break;
             case R.id.text_help://帮助
                 ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/persion/help/help_activity").navigation(this);
