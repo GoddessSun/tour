@@ -135,7 +135,7 @@
                 android:textColor="@color/text_color999"
                 android:text="起始时间: 2018-09-02 8:00"
                 android:layout_below="@id/linear_day"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="@dimen/dimen2"/>
 
             <TextView
                 android:id="@+id/text_item_my_appoint_stop_time"
@@ -145,7 +145,7 @@
                 android:textColor="@color/text_color999"
                 android:text="结束时间: 2018-09-02 8:00"
                 android:layout_below="@id/text_item_my_appoint_start_time"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="@dimen/dimen2"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circle_image_item_my_appiont"

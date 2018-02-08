@@ -136,7 +136,8 @@ public class HomeFragment extends BaseFragment {
 
 
     @OnClick({R.id.circle_image_view_persion,R.id.text_search,R.id.home_location_tv,
-            R.id.home_near_more_tv,R.id.home_near_hot_tv})
+            R.id.home_near_more_tv,R.id.home_near_hot_tv,R.id.home_login_guide_tv,
+    R.id.home_use_guide_tv,R.id.home_idea_user_tv})
     public void onPersionClick(View view){
 
         switch (view.getId()){
@@ -168,6 +169,24 @@ public class HomeFragment extends BaseFragment {
                 break;
             case R.id.home_near_hot_tv:
                 ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/home/near/near_activity")
+                        .navigation();
+                break;
+            case R.id.home_login_guide_tv:
+                Bundle loginBundle = new Bundle();
+                loginBundle.putInt("type",Constant.GUIDE.LOGIN_GUIDE);
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/login/guide/loginguide_activity")
+                        .with(loginBundle)
+                        .navigation();
+                break;
+            case R.id.home_use_guide_tv:
+                Bundle useBundle = new Bundle();
+                useBundle.putInt("type",Constant.GUIDE.USE_GUIDE);
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/login/guide/loginguide_activity")
+                        .with(useBundle)
+                        .navigation();
+                break;
+            case R.id.home_idea_user_tv:
+                ARouter.getInstance().build(Constant.ACTVIITY_ROUTE+"/tourguide/ideauser_activity")
                         .navigation();
                 break;
         }

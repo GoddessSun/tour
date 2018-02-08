@@ -25,4 +25,14 @@ public class Constant {
         //选择多张图片
         public static final int CHOICE_MORE_IMAGE = 0X0002;
     }
+
+    public class GUIDE{
+
+        //登录指导
+        public static final int LOGIN_GUIDE = 0X0003;
+
+        //使用指导
+        public static final int USE_GUIDE = 0X0004;
+
+    }
 }

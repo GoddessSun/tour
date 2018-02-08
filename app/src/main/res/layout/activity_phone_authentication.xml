@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayf2"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.sun.tour.real.phone.PhoneAuthenticationActivity">
     <LinearLayout
         android:layout_width="match_parent"

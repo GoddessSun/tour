@@ -134,7 +134,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".home.map.MapActivity" />
         <activity android:name=".home.img.ImagePreviewActivity" />
-        <activity android:name=".message.notify.SystemNotifyActivity"></activity>
+        <activity android:name=".message.notify.SystemNotifyActivity" />
+        <activity android:name=".tourguide.LoginGuideActivity" />
+        <activity android:name=".tourguide.IdeaUserActivity"></activity>
     </application>
 
 </manifest>

@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grayf2"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".real.identity_person.IdentityPersonActivity">
     
     <Button
@@ -88,26 +90,29 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dimen10">
                     <com.sun.tour.view.TImageView
+                        android:id="@+id/authentication_card_up_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginLeft="@dimen/dimen20"
                         android:layout_marginRight="@dimen/dimen20"
-                        android:background="@color/grayec"/>
+                        android:src="@drawable/ic_add_photo"/>
                     <com.sun.tour.view.TImageView
+                        android:id="@+id/authentication_card_down_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginLeft="@dimen/dimen20"
                         android:layout_marginRight="@dimen/dimen20"
-                        android:background="@color/grayec"/>
+                        android:src="@drawable/ic_add_photo"/>
                     <com.sun.tour.view.TImageView
+                        android:id="@+id/authentication_card_person_up_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginLeft="@dimen/dimen20"
                         android:layout_marginRight="@dimen/dimen20"
-                        android:background="@color/grayec"/>
+                        android:src="@drawable/ic_add_photo"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
