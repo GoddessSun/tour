@@ -42,7 +42,7 @@ public class ImageCropActivity extends Activity{
 //        mRequestCode = getIntent().getIntExtra("requestCode", 0);
         mRequestCode = getIntent().getExtras().getInt("requestCode",0);
         setStatusBarColor();
-        ImageSelectorUtils.openPhoto(this,Constant.ACTVIITY_ROUTE+"/imageselector/imageselector_activity", mRequestCode, true, 0);
+        ImageSelectorUtils.openPhoto(this, mRequestCode, true, 0);
         initView();
     }
 

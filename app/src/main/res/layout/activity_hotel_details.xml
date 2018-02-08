@@ -192,6 +192,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/hotel_detail_personcenter_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"

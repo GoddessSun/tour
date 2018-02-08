@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.sun.tour.R;
 
 import java.util.List;
@@ -23,11 +25,20 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private Context context;
     private List<String> data;
     private LayoutInflater inflater;
-
+    private OnImageCallBack onImageCallBack;
+    private RequestOptions options;
     public ImageAdapter(Context context, List<String> data) {
         this.context = context;
         this.data = data;
         inflater = LayoutInflater.from(context);
+        options = new RequestOptions();
+        options.centerCrop()
+                .error(R.drawable.img_guide_01)
+                .placeholder(R.drawable.img_guide_02);
+    }
+
+    public void setOnImageCallBack(OnImageCallBack onImageCallBack) {
+        this.onImageCallBack = onImageCallBack;
     }
 
     @Override
@@ -36,13 +47,31 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     }
 
     @Override
-    public void onBindViewHolder(ImageViewHolder holder, int position) {
+    public void onBindViewHolder(ImageViewHolder holder, final int position) {
 
         if (position >= data.size()){
-            holder.ivIcon.setImageResource(R.drawable.ic_add_image);
+            Glide.with(context)
+                    .load(R.drawable.ic_add_photo)
+                    .into(holder.ivIcon);
         }else{
-            holder.ivIcon.setImageResource(R.drawable.img_guide_02);
+            Glide.with(context)
+                    .setDefaultRequestOptions(options)
+                    .load(data.get(position))
+                    .into(holder.ivIcon);
         }
+        holder.ivIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onImageCallBack == null){
+                    return;
+                }
+                if (position >= data.size()){
+                    onImageCallBack.addImage();
+                }else{
+                    onImageCallBack.onClickImage(position);
+                }
+            }
+        });
 
     }
 
@@ -60,5 +89,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
+    }
+
+    interface OnImageCallBack{
+
+        void addImage();
+        void onClickImage(int position);
     }
 }

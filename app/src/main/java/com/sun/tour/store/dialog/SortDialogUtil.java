@@ -2,6 +2,7 @@ package com.sun.tour.store.dialog;
 
 import android.content.Context;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.sun.tour.R;
+import com.sun.tour.store.grade.GradeAddAdapter;
 import com.sun.tour.view.WDatePicket;
 import com.sun.tour.view.WTimePicket;
 
@@ -139,6 +141,33 @@ public class SortDialogUtil {
         dialog.show();
     }
 
+    public static void showStoreEditTypeDialog(Context context){
+
+        List<String> data = new ArrayList<>();
+        for (int i = 0; i < 16; i++) {
+            data.add("测试");
+        }
+        View view = LayoutInflater.from(context).inflate(R.layout.item_store_edit_type,null);
+        int height = context.getResources().getDisplayMetrics().heightPixels;
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,height/2);
+        view.setLayoutParams(params);
+        RecyclerView rv = view.findViewById(R.id.store_edit_type_rv);
+        Button btn = view.findViewById(R.id.store_edit_type_btn);
+        GradeAddAdapter typeAdapter = new GradeAddAdapter(context,data);
+        rv.setLayoutManager(new GridLayoutManager(context,4));
+        rv.setAdapter(typeAdapter);
+
+        final BottomSheetDialog dialog = new BottomSheetDialog(context);
+        dialog.setContentView(view);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
+
+    }
     interface OnCancelCallBack{
 
         void dialogCancel();

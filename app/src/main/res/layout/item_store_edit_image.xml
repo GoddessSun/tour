@@ -3,14 +3,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.sun.tour.view.TRelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen5">
-        <ImageView
-            android:id="@+id/store_edit_image_icon_tv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"/>
-    </com.sun.tour.view.TRelativeLayout>
+    <com.sun.tour.view.TImageView
+        android:id="@+id/store_edit_image_icon_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_margin="@dimen/dimen5"/>
 </LinearLayout>

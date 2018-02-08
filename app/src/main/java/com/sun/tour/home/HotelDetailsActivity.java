@@ -91,7 +91,8 @@ public class HotelDetailsActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @OnClick({R.id.hotel_detail_subscribe_btn,R.id.text_see_map_hotel_details,R.id.hotel_detail_request_btn})
+    @OnClick({R.id.hotel_detail_subscribe_btn,R.id.text_see_map_hotel_details,R.id.hotel_detail_request_btn,
+    R.id.hotel_detail_personcenter_layout})
     public void onClick(View view){
 
         switch (view.getId()) {
@@ -110,6 +111,9 @@ public class HotelDetailsActivity extends BaseActivity {
                 break;
             case R.id.hotel_detail_request_btn:
                 ARouter.getInstance().build(Constant.ACTVIITY_ROUTE + "/message/chat/chat_activity").navigation();
+                break;
+            case R.id.hotel_detail_personcenter_layout:
+                ARouter.getInstance().build("/tour/persion/persion_center_activity").navigation();
                 break;
         }
     }

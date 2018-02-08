@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
@@ -13,7 +14,6 @@ import com.sun.tour.base.BaseFragment;
 import com.sun.tour.focus.adapter.FocusAdapter;
 import com.sun.tour.focus.callback.OnItemCancleClick;
 import com.sun.tour.store.dialog.SortDialogUtil;
-import com.sun.tour.view.RxToast;
 
 import butterknife.BindView;
 
@@ -82,6 +82,8 @@ public class FocusFragment extends BaseFragment implements OnItemCancleClick,OnR
 
     @Override
     public void onItemRecyclerViewClick(int position) {
-        RxToast.info("Click:"+position);
+
+        ARouter.getInstance().build("/tour/home/hotel_details_activity").navigation();
+//        RxToast.info("Click:"+position);
     }
 }
