@@ -32,14 +32,14 @@ public class IdeaUserActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.idea_user_cancel_iv, R.id.idea_user_save_tv})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.idea_user_cancel_iv:
-                finish();
-                break;
-            case R.id.idea_user_save_tv:
-                break;
-        }
-    }
+//    @OnClick({R.id.idea_user_cancel_iv, R.id.idea_user_save_tv})
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.idea_user_cancel_iv:
+//                finish();
+//                break;
+//            case R.id.idea_user_save_tv:
+//                break;
+//        }
+//    }
 }
