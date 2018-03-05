@@ -20,6 +20,7 @@ import rx.schedulers.Schedulers;
 public class RegistPresenter implements RegistContract.Presenter {
     private RegistContract.View mView;
     private Context context;
+    private CountDownTimer mTimer;
 
     public RegistPresenter(Context context) {
         this.context = context;
@@ -41,22 +42,22 @@ public class RegistPresenter implements RegistContract.Presenter {
             return;
         }
         countDownTimer();
-        RetrofitUtils.getInstance().sendCode(mobile)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new NetWorkCallBack<Result>() {
-                    @Override
-                    public void onSuccess(Result result) {
-
-                        countDownTimer();
-
-                    }
-
-                    @Override
-                    public void onFailed(String msg) {
-                        RxToast.showToast(msg);
-                    }
-                });
+//        RetrofitUtils.getInstance().sendCode(mobile)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new NetWorkCallBack<Result>() {
+//                    @Override
+//                    public void onSuccess(Result result) {
+//
+//                        countDownTimer();
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailed(String msg) {
+//                        RxToast.showToast(msg);
+//                    }
+//                });
 
 
     }
@@ -99,6 +100,14 @@ public class RegistPresenter implements RegistContract.Presenter {
 
     }
 
+    @Override
+    public void cancleTimer() {
+        if (mTimer!=null){
+            mTimer.cancel();
+            mTimer = null;
+        }
+    }
+
     /**
      *
      *
@@ -107,7 +116,7 @@ public class RegistPresenter implements RegistContract.Presenter {
      */
     private void countDownTimer(){
 
-        CountDownTimer timer = new CountDownTimer(60*1000,1000) {
+        mTimer = new CountDownTimer(60*1000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
@@ -124,7 +133,9 @@ public class RegistPresenter implements RegistContract.Presenter {
                 cancel();
             }
         };
-        timer.start();
+        mTimer.start();
     }
+
+
 
 }

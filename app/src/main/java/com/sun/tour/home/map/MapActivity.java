@@ -50,7 +50,7 @@ public class MapActivity extends BaseActivity {
 
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
     }
 

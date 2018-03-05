@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -17,8 +18,11 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.sun.tour.MainActivity;
 import com.sun.tour.OnRecyclerViewItemClick;
 import com.sun.tour.R;
+import com.sun.tour.TourApplation;
 import com.sun.tour.base.BaseFragment;
+import com.sun.tour.config.UserConfig;
 import com.sun.tour.home.adapter.NearbyAdapter;
+import com.sun.tour.result.User;
 import com.sun.tour.utils.Constant;
 
 import java.util.Arrays;
@@ -73,6 +77,21 @@ public class HomeFragment extends BaseFragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (UserConfig.isLogin()){
+            User user = TourApplation.getInstance().getActiveUser();
+            if (!TextUtils.isEmpty(user.headerImgUrl)){
+                Glide.with(getHoldingActivity())
+                        .load(user.headerImgUrl)
+                        .into(mCircleImageView);
+            }
+        }else {
+            mCircleImageView.setImageResource(R.drawable.ic_default_user_icon);
         }
     }
 

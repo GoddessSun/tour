@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.sun.tour.config.UserConfig;
 import com.sun.tour.utils.SharedPrefUtil;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionNo;
@@ -53,7 +54,12 @@ public class SplashActivity extends AppCompatActivity {
                 if (isFirst) {
                     ARouter.getInstance().build("/tour/main/guide_activity").navigation();
                 } else {
-                    ARouter.getInstance().build("/tour/main/main_activity").navigation();
+                    if (UserConfig.isLogin()){
+                        ARouter.getInstance().build("/tour/main/main_activity").navigation();
+                    }else {
+                        ARouter.getInstance().build("/tour/login/login_activity").navigation();
+                    }
+
                 }
                 finish();
             }

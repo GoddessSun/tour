@@ -7,8 +7,13 @@ import android.widget.EditText;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sun.tour.R;
+import com.sun.tour.TourApplation;
 import com.sun.tour.base.BaseActivity;
+import com.sun.tour.event.LoginEvent;
+import com.sun.tour.result.User;
 import com.sun.tour.utils.Constant;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -70,9 +75,17 @@ public class RegistPasswordActivity extends BaseActivity implements RegistPasswo
 
     @OnClick(R.id.regist_finish_btn)
     public void onClick() {
-
         if (presenter != null) {
             presenter.regist(mobile,etPassword.getText().toString(),etAgainPassword.getText().toString(),code,nickname,type);
         }
+
+        User user = new User();
+        user.mobile = mobile;
+        user.nick = nickname;
+        user.password = etPassword.getText().toString().trim();
+        TourApplation.getInstance().setActiveUser(user);
+
+        EventBus.getDefault().postSticky(new LoginEvent(true));
+        finish();
     }
 }

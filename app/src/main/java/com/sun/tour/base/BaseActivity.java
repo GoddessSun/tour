@@ -14,8 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sun.tour.R;
+import com.sun.tour.event.BaseEvent;
 import com.sun.tour.utils.SystemStatueBarUtil;
 import com.sun.tour.view.MyProgressDialog;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -53,7 +58,17 @@ public class BaseActivity extends AppCompatActivity{
         super.onDestroy();
         mUnbinder.unbind();
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
     @Override
     public void setContentView(int layoutResID) {
 
@@ -241,6 +256,10 @@ public class BaseActivity extends AppCompatActivity{
     }
 
 
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
+    public void onBaseEvent(BaseEvent baseEvent){
+
+    }
 
 
 }

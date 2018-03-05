@@ -86,7 +86,7 @@ public class GuideActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         SharedPrefUtil.putBoolean(SharedPrefUtil.SP_IS_FIRST_LOGIN,false);
-                        ARouter.getInstance().build("/tour/main/main_activity").navigation();
+                        ARouter.getInstance().build("/tour/login/login_activity").navigation();
                         GuideActivity.this.finish();
                     }
                 });

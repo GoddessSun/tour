@@ -11,7 +11,11 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.sun.tour.R;
 import com.sun.tour.base.BaseActivity;
+import com.sun.tour.event.LoginEvent;
 import com.sun.tour.utils.Constant;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -91,5 +95,13 @@ public class RegistActivity extends BaseActivity implements RegistContract.View 
                 .with(bundle)
                 .navigation();
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
+    public void onLoginEvent(LoginEvent loginEvent){
+        if (loginEvent.isLogin){
+//            presenter.cancleTimer();
+            finish();
+        }
     }
 }

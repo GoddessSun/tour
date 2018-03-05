@@ -10,6 +10,10 @@ import android.content.SharedPreferences.Editor;
 public class SharedPrefUtil {
     private static final String SPNAME = "Tour";
     public static final String SP_IS_FIRST_LOGIN = "is_first";
+    public static final String USER_NAME = "user_name";
+    public static final String USER_PASSWORD = "password";
+    public static final String SP_ACTIVE_ACCOUNT = "account";
+    public static final String SP_ACTIVE_TOKEN = "token";
     private static Context mContext = null;
     private static SharedPreferences sharedPreferences = null;
     private static Editor editor = null;// 获取编辑器

@@ -21,5 +21,7 @@ public class RegistContract {
         void sendMobile(String mobile);
 
         void judgeTextEmpty(boolean checked, String mobile, String code, String nickname);
+
+        void cancleTimer();
     }
 }
